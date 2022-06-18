@@ -1,0 +1,22 @@
+$font: 'Nunito'
+
+@font-face 
+    font-family: $font
+    src: url("./../utilities/fonts/nunito.ttf") format("truetype")
+
+p
+    font-size: 50px
+    text-align: center
+    font-family: $font
+
+    &.light
+        font-variation-settings: 'wght' 300
+
+    &.regular
+        font-variation-settings: 'wght' 400
+    
+    &.black
+        font-variation-settings: 'wght' 900
+    
+    &.bold
+        font-variation-settings: 'wght' 700
