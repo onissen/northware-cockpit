@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "Nunito";
+  src: url("./../utilities/fonts/nunito.ttf") format("truetype");
+}
+body {
+  font-family: "Nunito", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-toggle {
+  color: white;
+}
+
+.right-nav {
+  color: white;
+}
+
+.dropdown-menu[data-bs-popper] {
+  left: auto;
+  inset: 50px 0px auto auto;
+}
+
+/*# sourceMappingURL=main.css.map */
