@@ -1,6 +1,6 @@
 <?php 
     $service = 'cockpit';
-    require 'inc/header.php' 
+    require 'components/header.php' 
 ?>
 
-<?php require 'inc/footer.php' ?>
+<?php require 'components/footer.php' ?>

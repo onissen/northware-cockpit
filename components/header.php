@@ -18,7 +18,22 @@
 </head>
 <body>
     <nav class="navbar navbar-dark navbar-expand-md mb-4 fixed-top bg-<?php echo $service ?>">
-        <div class="container-fluid">
+        <div class="container-fluid shadow">
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle nav-link" id="appbox-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-grid-fill"></i>
+                </a>
+                    <div id="appbox" class="dropdown-menu dropdow-align-left shadow" aria-labelledby="dropdownMenuLink">
+                        <a href="http://northware-cockpit.test/">
+                            <div class="app-tile tile-cockpit">
+                                <i class="fa-app fa-solid fa-briefcase"></i>
+                                <div class="title">Northware Cockpit</div>
+                            </div>
+                        </a>
+                        <div class="app-tile">Hallo</div>
+                        <div class="app-tile">Hallo</div>
+                    </div>
+            </div>
             <a href="http://northware-cockpit.test/" class="navbar-brand"><?php echo $service_brand ?></a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,23 +41,18 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbar">
-                <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Test</a>
-                    </li>
-                </ul>
+                <?php include 'navbar-contents.php' ?>
                 <ul class="navbar-nav justify-content-end">
                     <li class="nav-item dropdown text-end">
                         <a href="#" class="dropdown-toggle nav-link" id="toggle-account" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-solid fa-circle-user"></i>
+                            <i class="fa-solid fa-user"></i>
                         </a>
-                        <ul class="dropdown-menu dropdown-right dropdown-menu-dark" aria-labelledby="toggle-account" data-popper-placement="bottom-end">
+                        <ul class="dropdown-menu dropdown-align-right dropdown-menu-dark shadow-sm" aria-labelledby="toggle-account" data-popper-placement="bottom-end">
+                            <li><a href="#" class="dropdown-item disabled">Angemeldeter Benutzer</a>
+                            </li>
                             <form action="index.php?logout" method="post">
                                 <input type="hidden" name="action" value="logmeout">
-                                <button type="submit" class="btn btn-link">Abmelden</button>
+                                <button type="submit" class="dropdown-item"><i class="fa-solid fa-arrow-right-from-bracket"></i> Abmelden</button>
                             </form>
                         </ul>
                     </li>

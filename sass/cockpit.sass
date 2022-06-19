@@ -1,4 +1,9 @@
-$primary: #001C40
+@import cockpit/variables
+@import global-var
 
 .bg-cockpit
     background-color: $primary
+
+
+.dropdown-menu-dark
+    @include DarkDropdown ($primary)
