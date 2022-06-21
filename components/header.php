@@ -17,24 +17,40 @@
     <title><?php if (isset($siteTitle)) {echo $siteTitle.' | ';} echo $service_brand ?></title>
 </head>
 <body>
-    <nav class="navbar navbar-dark navbar-expand-md mb-4 fixed-top bg-<?php echo $service ?>">
+    <nav class="navbar <?php echo $service_navtheme ?> navbar-expand-md mb-4 fixed-top bg-<?php echo $service ?>">
         <div class="container-fluid shadow">
             <div class="dropdown">
                 <a href="#" class="dropdown-toggle nav-link" id="appbox-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="bi bi-grid-fill"></i>
                 </a>
-                    <div id="appbox" class="dropdown-menu dropdow-align-left shadow" aria-labelledby="dropdownMenuLink">
+                    <div id="appbox" class="dropdown-menu dropdow-align-left shadow-sm" aria-labelledby="dropdownMenuLink">
                         <a href="http://northware-cockpit.test/">
                             <div class="app-tile tile-cockpit">
                                 <i class="fa-app fa-solid fa-briefcase"></i>
                                 <div class="title">Northware Cockpit</div>
                             </div>
                         </a>
-                        <div class="app-tile">Hallo</div>
-                        <div class="app-tile">Hallo</div>
+                        <a href="http://northware-cockpit.test/finance">
+                            <div class="app-tile tile-finance">
+                                <i class="fa-app fa-solid fa-file-invoice-dollar"></i>
+                                <div class="title">Northware Finance</div>
+                            </div>
+                        </a>
+                        <a href="http://northware-cockpit.test/hures">
+                            <div class="app-tile tile-hures">
+                                <i class="fa-app fa-solid fa-people-group"></i>
+                                <div class="title">Northware HuRes</div>
+                            </div>
+                        </a>
+                        <a href="http://northware-cockpit.test/trader">
+                            <div class="app-tile tile-trader">
+                                <i class="fa-app fa-solid fa-dolly"></i>
+                                <div class="title">Northware Trader</div>
+                            </div>
+                        </a>
                     </div>
-            </div>
-            <a href="http://northware-cockpit.test/" class="navbar-brand"><?php echo $service_brand ?></a>
+                </div>
+                <a href="http://northware-cockpit.test/" class="navbar-brand"><?php echo $service_brand ?></a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

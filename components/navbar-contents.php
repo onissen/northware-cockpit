@@ -9,7 +9,7 @@
     </ul>
 <?php } ?>
 
-<?php if ($service == 'financials') { ?>
+<?php if ($service == 'finance') { ?>
     <ul class="navbar-nav me-auto mb-2 mb-md-0">
         <li class="nav-item">
             <a href="#" class="nav-link">Start</a>

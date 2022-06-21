@@ -1,3 +1,6 @@
+.navbar-brand
+    font-variation-settings: $wght-sbold
+
 .right-nav
     color: white
 
@@ -29,26 +32,48 @@
 #appbox
     inset: 50px 0px auto 0
     padding: 8px
-    min-width: 25rem
+    min-width: 27.5rem
     border: none
 
 .app-tile
     float: left
-    width: 7rem
-    height: 7rem
-    padding: 0.5rem
+    width: 8rem
+    height: 8rem
+    padding: 1.5rem 1rem
     margin: 0.4rem
     border-radius: 0.375rem
     text-align: center
     vertical-align: center
+    border: 1px solid transparent
+
+    &:hover
+        box-shadow: $box-shadow
+        transition: border-color .167s linear,box-shadow .167s linear
+        border: 1px solid
     
 
     .fa-app
         font-size: 2.5rem
     
     .title
-        margin-top: 0.3rem
+        font-variation-settings: $wght-sbold
+
+@mixin ServiceTile($background, $color)
+    background-color: $background
+    color: $color
+    
+    &:hover
+     border-color: mix($background, black, 95%)
 
 .tile-cockpit
-    background-color: #001C40
-    color: white
+    @include ServiceTile($background: $cockpit-prm, $color: white)
+
+.tile-finance
+    @include ServiceTile($background: $finance-prm, $color: white)
+
+.tile-hures
+    @include ServiceTile($background: $hures-prm, $color: white)
+
+.tile-trader
+    @include ServiceTile($background: $trader-prm, $color: black)
+    
