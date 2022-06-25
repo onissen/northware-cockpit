@@ -1,0 +1,18 @@
+@mixin bs-btn-primary ($primary, $color)
+    .btn-primary
+        background-color: $primary
+        color: $color
+        border-color: $primary
+
+        &:hover, &:focus
+            background-color: mix($primary, black, 80%)
+            color: $color
+            border-color: mix($primary, black, 80%)
+
+        &:active
+            background-color: mix($primary, black, 65%)
+            color: $color
+            border-color: mix($primary, black, 65%)
+        
+        &:focus
+            box-shadow: 0 0 0 0.25rem rgba(mix($primary, white, 50%), .5)

@@ -1,4 +1,16 @@
-<?php include 'service-variables.php';?>
+<?php
+    require 'service-variables.php';
+    require 'connection.php';
+
+    if ($_POST['action'] == 'logout') {
+        unset($_SESSION['username']);
+        unset($_SESSION['name']);
+        header('Location: login.php?logout');
+    } 
+    elseif (!isset($_SESSION['username'])) {
+        header('Location: login.php');
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="de">
@@ -64,10 +76,10 @@
                             <i class="fa-solid fa-user"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-align-right dropdown-menu-dark shadow-sm" aria-labelledby="toggle-account" data-popper-placement="bottom-end">
-                            <li><a href="#" class="dropdown-item disabled">Angemeldeter Benutzer</a>
+                            <li><a href="#" class="dropdown-item disabled"><?php echo $_SESSION['name'] ?></a>
                             </li>
-                            <form action="index.php?logout" method="post">
-                                <input type="hidden" name="action" value="logmeout">
+                            <form method="post">
+                                <input type="hidden" name="action" value="logout">
                                 <button type="submit" class="dropdown-item"><i class="fa-solid fa-arrow-right-from-bracket"></i> Abmelden</button>
                             </form>
                         </ul>

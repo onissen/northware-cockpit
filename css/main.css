@@ -101,4 +101,40 @@ body {
   border-color: #ec9f10;
 }
 
+.login-body, .login-html {
+  height: 100%;
+}
+
+.login-body {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  padding: 40px 0;
+  background: url(https://premium26.privatepilot.de/hugo-hamann/indimg/Background_Buerokompetenz_2019_blank.jpg) no-repeat fixed center center;
+  background-size: cover;
+  background-position: 100% 100%;
+}
+.login-body .login-main {
+  margin: auto;
+  max-width: 400px;
+  width: 100% !important;
+  padding: 15px;
+}
+.login-body .login-main .login-brand {
+  font-size: 1.25rem;
+  background-color: #001C40;
+  color: white;
+  border-radius: 8px;
+  padding: 1rem;
+}
+.login-body .login-main .login-box {
+  background-color: white;
+  border-radius: 8px;
+  padding: 3rem;
+}
+
+.wrapper {
+  margin-top: 5rem;
+}
+
 /*# sourceMappingURL=main.css.map */

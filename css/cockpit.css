@@ -6,4 +6,23 @@
   background-color: #001C40;
 }
 
+body .btn-primary {
+  background-color: #001C40;
+  color: white;
+  border-color: #001C40;
+}
+body .btn-primary:hover, body .btn-primary:focus {
+  background-color: #001633;
+  color: white;
+  border-color: #001633;
+}
+body .btn-primary:active {
+  background-color: #00122a;
+  color: white;
+  border-color: #00122a;
+}
+body .btn-primary:focus {
+  box-shadow: 0 0 0 0.25rem rgba(128, 142, 160, 0.5);
+}
+
 /*# sourceMappingURL=cockpit.css.map */

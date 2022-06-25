@@ -1,3 +1,4 @@
+@import bs-theme
 @import cockpit/_variables
 @import global-var
 
@@ -7,3 +8,6 @@
 
 .dropdown-menu-dark
     @include DarkDropdown ($color: $primary)
+
+body
+    @include bs-btn-primary ($primary: $primary, $color: white)
