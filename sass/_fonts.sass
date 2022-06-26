@@ -1,10 +1,18 @@
 $nunito: 'Nunito'
+$nunito-italic: 'Nunito Italic'
 $font-fallback: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 
 @font-face 
     font-family: $nunito
     src: url("./../utilities/fonts/nunito.ttf") format("truetype")
 
+@font-face 
+    font-family: $nunito-italic
+    src: url("./../utilities/fonts/nunito-italic.ttf") format("truetype")
+
+// Font Variations
+    // Use them with font-variation-settings
+    // eg. font-variation-settings: $wght-bold
 $wght-xlight: 'wght' 200
 $wght-light: 'wght' 300
 $wght-regular: 'wght' 400
@@ -13,6 +21,11 @@ $wght-sbold: 'wght' 600
 $wght-bold: 'wght' 700
 $wght-xbold: 'wght' 800
 $wght-black: 'wght' 900
+$italic: 'ital' 1
 
 body
     font-family: $nunito, $font-fallback
+    font-variation-settings: $wght-regular
+
+h1, h2, h3, h4, h5, h6
+    font-variation-settings: $wght-med

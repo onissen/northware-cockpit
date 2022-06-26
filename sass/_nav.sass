@@ -1,6 +1,12 @@
 .navbar-brand
     font-variation-settings: $wght-sbold
 
+.nav-link
+    color: rgba(255, 255, 255, 0.75)
+
+    &:hover, &:focus
+        color: rgba(255, 255, 255, 0.9)
+
 .right-nav
     color: white
 
@@ -11,6 +17,11 @@
 .dropdown-align-left[data-bs-popper]
     left: 0
     inset: 50px 0px auto auto
+
+.dropdown-menu-dark
+    button, a
+        &:hover, &:active, &:focus
+            background-color: rgba(white, 0.15)
 
 
 // App Box
@@ -58,22 +69,5 @@
     .title
         font-variation-settings: $wght-sbold
 
-@mixin ServiceTile($background, $color)
-    background-color: $background
-    color: $color
-    
-    &:hover
-     border-color: mix($background, black, 95%)
-
-.tile-cockpit
-    @include ServiceTile($background: $cockpit-prm, $color: white)
-
-.tile-finance
-    @include ServiceTile($background: $finance-prm, $color: white)
-
-.tile-hures
-    @include ServiceTile($background: $hures-prm, $color: white)
-
-.tile-trader
-    @include ServiceTile($background: $trader-prm, $color: black)
+@import app-theme
     

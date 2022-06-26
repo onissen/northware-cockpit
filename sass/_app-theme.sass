@@ -1,0 +1,18 @@
+@mixin ServiceTile($background, $color)
+    background-color: $background
+    color: $color
+    
+    &:hover
+     border: 1px solid mix($background, black, 95%)
+
+.tile-cockpit
+    @include ServiceTile($background: $cockpit-prm, $color: white)
+
+.tile-finance
+    @include ServiceTile($background: $finance-prm, $color: white)
+
+.tile-hures
+    @include ServiceTile($background: $hures-prm, $color: white)
+
+.tile-trader
+    @include ServiceTile($background: $trader-prm, $color: black)

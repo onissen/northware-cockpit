@@ -1,2 +1,22 @@
+@media ( min-width: 1200px )
+    .wrapper
+        max-width: 77% !important
+
+@media ( min-width: 992px )
+    .wrapper
+        max-width: 90%
+
 .wrapper
-    margin-top: 5rem
+    margin-top: 3rem
+    padding: 1rem
+    border-radius: $border-radius
+    width: 100%
+
+.salutation
+    text-align: center
+    padding: 3rem 0
+    border-radius: $border-radius
+    background-size: cover
+
+    &.morning, &.afternoon, &.evening
+        background: url(../utilities/bg-landscape.jpg) center center no-repeat

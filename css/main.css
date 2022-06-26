@@ -1,13 +1,50 @@
+body {
+  margin: 0;
+}
+
 @font-face {
   font-family: "Nunito";
   src: url("./../utilities/fonts/nunito.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Nunito Italic";
+  src: url("./../utilities/fonts/nunito-italic.ttf") format("truetype");
+}
 body {
   font-family: "Nunito", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-variation-settings: "wght" 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-variation-settings: "wght" 500;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("./../utilities/fonts/nunito.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Nunito Italic";
+  src: url("./../utilities/fonts/nunito-italic.ttf") format("truetype");
+}
+body {
+  font-family: "Nunito", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-variation-settings: "wght" 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-variation-settings: "wght" 500;
 }
 
 .navbar-brand {
   font-variation-settings: "wght" 600;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.75);
+}
+.nav-link:hover, .nav-link:focus {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .right-nav {
@@ -22,6 +59,10 @@ body {
 .dropdown-align-left[data-bs-popper] {
   left: 0;
   inset: 50px 0px auto auto;
+}
+
+.dropdown-menu-dark button:hover, .dropdown-menu-dark button:active, .dropdown-menu-dark button:focus, .dropdown-menu-dark a:hover, .dropdown-menu-dark a:active, .dropdown-menu-dark a:focus {
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 #appbox-toggle {
@@ -74,7 +115,7 @@ body {
   color: white;
 }
 .tile-cockpit:hover {
-  border-color: #001b3d;
+  border: 1px solid #001b3d;
 }
 
 .tile-finance {
@@ -82,7 +123,7 @@ body {
   color: white;
 }
 .tile-finance:hover {
-  border-color: #7c060a;
+  border: 1px solid #7c060a;
 }
 
 .tile-hures {
@@ -90,7 +131,7 @@ body {
   color: white;
 }
 .tile-hures:hover {
-  border-color: #037f0e;
+  border: 1px solid #037f0e;
 }
 
 .tile-trader {
@@ -98,7 +139,7 @@ body {
   color: black;
 }
 .tile-trader:hover {
-  border-color: #ec9f10;
+  border: 1px solid #ec9f10;
 }
 
 .login-body, .login-html {
@@ -110,7 +151,7 @@ body {
   display: flex;
   align-items: center;
   padding: 40px 0;
-  background: url(https://premium26.privatepilot.de/hugo-hamann/indimg/Background_Buerokompetenz_2019_blank.jpg) no-repeat fixed center center;
+  background: url(../utilities/bg-login.jpg) no-repeat fixed center center;
   background-size: cover;
   background-position: 100% 100%;
 }
@@ -133,8 +174,31 @@ body {
   padding: 3rem;
 }
 
+@media (min-width: 1200px) {
+  .wrapper {
+    max-width: 77% !important;
+  }
+}
+@media (min-width: 992px) {
+  .wrapper {
+    max-width: 90%;
+  }
+}
 .wrapper {
-  margin-top: 5rem;
+  margin-top: 3rem;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.salutation {
+  text-align: center;
+  padding: 3rem 0;
+  border-radius: 8px;
+  background-size: cover;
+}
+.salutation.morning, .salutation.afternoon, .salutation.evening {
+  background: url(../utilities/bg-landscape.jpg) center center no-repeat;
 }
 
 /*# sourceMappingURL=main.css.map */

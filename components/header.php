@@ -71,9 +71,11 @@
             <div class="collapse navbar-collapse" id="navbar">
                 <?php include 'navbar-contents.php' ?>
                 <ul class="navbar-nav justify-content-end">
+                    <li class="nav-item"><span class="nav-link nav-timestamp"><?php echo $tage[$day].', '.date('d.m.Y H:i').' Uhr'?></span></li>
+
                     <li class="nav-item dropdown text-end">
                         <a href="#" class="dropdown-toggle nav-link" id="toggle-account" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-solid fa-user"></i>
+                            <i class="fa-solid fa-user me-1"></i> <?php echo $_SESSION['name'] ?>
                         </a>
                         <ul class="dropdown-menu dropdown-align-right dropdown-menu-dark shadow-sm" aria-labelledby="toggle-account" data-popper-placement="bottom-end">
                             <li><a href="#" class="dropdown-item disabled"><?php echo $_SESSION['name'] ?></a>
@@ -88,3 +90,5 @@
             </div>
         </div>
     </nav>
+
+    <div class="container-lg wrapper">
