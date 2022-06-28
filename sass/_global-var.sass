@@ -5,11 +5,30 @@ $box-shadow-sm:    0 .125rem .25rem rgba(black, .075)
 $box-shadow-lg:    0 1rem 3rem rgba(black, .175)
 $box-shadow-inset: inset 0 1px 2px rgba(black, .075)
 
+$secondary: #5D656C
+
 $border-radius: 8px
 
 $cockpit-prm: #001C40
 $finance-prm: #83060B
 $hures-prm: #03860F
 $trader-prm: #f8a711
+
 @mixin DarkDropdown($color)
     background-color: $color
+
+@mixin LinkBtn($color)
+    .link-btn-primary
+        color: $color
+
+        &:hover
+            background-color: mix($color, white, 10%)
+            color: mix($color, black, 80%)
+
+    .link-btn-secondary
+        color: $secondary
+
+        &:hover
+            background-color: mix($secondary, white, 10%)
+            color: mix($secondary, black, 80%)
+    

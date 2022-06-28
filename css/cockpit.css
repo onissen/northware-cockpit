@@ -15,6 +15,10 @@ h1, h2, h3, h4, h5, h6 {
   font-variation-settings: "wght" 500;
 }
 
+button, input, optgroup, select, textarea, option {
+  font-family: "Nunito", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .app-link {
   text-decoration: none;
 }
@@ -41,6 +45,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .bg-cockpit {
   background-color: #001C40;
+  color: white;
 }
 
 .dropdown-menu-dark {

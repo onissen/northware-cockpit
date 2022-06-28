@@ -5,13 +5,13 @@
     <div class="salutation shadow-sm
     <?php 
             if (date('H')<= 11) {echo 'morning';}
-            if (date('H')<= 17) {echo 'afternoon';}
+            if (date('H')> 11 AND date('H')< 17) {echo 'afternoon';}
             if (date('H')>= 17) {echo 'evening';}
         ?>">
         <h1>
             <?php 
                 if (date('H')<= 11) {echo 'Guten Morgen';}
-                if (date('H')<= 17) {echo 'Guten Tag';}
+                if (date('H')> 11 AND date('H')< 17) {echo 'Guten Tag';}
                 if (date('H')>= 17) {echo 'Guten Abend';}
             ?>
         </h1>

@@ -2,21 +2,8 @@ body {
   margin: 0;
 }
 
-@font-face {
-  font-family: "Nunito";
-  src: url("./../utilities/fonts/nunito.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Nunito Italic";
-  src: url("./../utilities/fonts/nunito-italic.ttf") format("truetype");
-}
-body {
-  font-family: "Nunito", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-variation-settings: "wght" 400;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-variation-settings: "wght" 500;
+html {
+  height: 100%;
 }
 
 @font-face {
@@ -34,6 +21,31 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-variation-settings: "wght" 500;
+}
+
+button, input, optgroup, select, textarea, option {
+  font-family: "Nunito", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("./../utilities/fonts/nunito.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Nunito Italic";
+  src: url("./../utilities/fonts/nunito-italic.ttf") format("truetype");
+}
+body {
+  font-family: "Nunito", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-variation-settings: "wght" 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-variation-settings: "wght" 500;
+}
+
+button, input, optgroup, select, textarea, option {
+  font-family: "Nunito", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .navbar-brand {
@@ -161,10 +173,11 @@ h1, h2, h3, h4, h5, h6 {
   width: 100% !important;
   padding: 15px;
 }
+.login-body .login-main.confirmation-main {
+  max-width: 600px;
+}
 .login-body .login-main .login-brand {
   font-size: 1.25rem;
-  background-color: #001C40;
-  color: white;
   border-radius: 8px;
   padding: 1rem;
 }
@@ -172,6 +185,18 @@ h1, h2, h3, h4, h5, h6 {
   background-color: white;
   border-radius: 8px;
   padding: 3rem;
+}
+.login-body .login-main .userconfirmation-box {
+  background-color: white;
+  border-radius: 8px;
+  padding: 0.5rem;
+  text-align: center;
+}
+.login-body .login-main .userconfirmation-box .current-user {
+  padding: 0.7rem;
+}
+.login-body .login-main .userconfirmation-box .current-user i {
+  margin-right: 0.5rem;
 }
 
 @media (min-width: 1200px) {
@@ -199,6 +224,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 .salutation.morning, .salutation.afternoon, .salutation.evening {
   background: url(../utilities/bg-landscape.jpg) center center no-repeat;
+}
+
+.link-btn {
+  display: inline-block;
+  min-width: 6rem;
+  text-decoration: none;
+  padding: 0.7rem;
+  border-radius: 0.375rem;
+  border: 1px solid transparent;
+}
+.link-btn:hover {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  transition: border-color 0.167s linear, box-shadow 0.167s linear;
 }
 
 /*# sourceMappingURL=main.css.map */

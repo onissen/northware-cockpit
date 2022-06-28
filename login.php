@@ -1,26 +1,10 @@
 <?php
     $service = 'cockpit';
     $siteTitle = 'Login';
-    require 'components/service-variables.php';
-    require 'components/connection.php';
+    $no_body = true;
+    $noredirect = true;
+    require 'components/header.php';
 ?>
-
-<!DOCTYPE html>
-<html lang="de" class="login-html">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="http://northware-cockpit.test/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://northware-cockpit.test/utilities/fontawesome/css/all.css">
-    <link rel="stylesheet" href="http://northware-cockpit.test/utilities/bootstrap-icons/bootstrap-icons.css">
-    <link rel="shortcut icon" href="http://northware-cockpit.test/utilities/favicon-<?php echo $service ?>.png" type="image/x-icon">
-    <link rel="stylesheet" href="http://northware-cockpit.test/css/main.css">
-    <link rel="stylesheet" href="http://northware-cockpit.test/css/<?php echo $service ?>.css">
-    
-    <title><?php if (isset($siteTitle)) {echo $siteTitle.' | ';} echo $service_brand ?></title>
-</head>
 
 <?php
 
@@ -53,7 +37,7 @@
 
 <body class="login-body">
     <main class="login-main">
-        <div class="login-brand mb-4">
+        <div class="login-brand mb-4 bg-cockpit">
             <i class="fa-solid fa-briefcase"></i>
             <span>Northware Cockpit</span>
         </div>

@@ -7,8 +7,9 @@
         $service_navtheme = 'navbar-dark';
     }
 
-    if ($service == 'financials') {
-        $service_brand = 'Northware Financials';
+    if ($service == 'finance') {
+        $service_brand = 'Northware Finance';
+        $service_navtheme = 'navbar-dark';
     }
 
 ?>

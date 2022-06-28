@@ -2,13 +2,15 @@
     require 'service-variables.php';
     require 'connection.php';
 
-    if ($_POST['action'] == 'logout') {
-        unset($_SESSION['username']);
-        unset($_SESSION['name']);
-        header('Location: login.php?logout');
-    } 
-    elseif (!isset($_SESSION['username'])) {
-        header('Location: login.php');
+    if (!isset($noredirect) OR $noredirect!= true AND isset($_POST['action'])) {
+        if ($_POST['action'] == 'logout') {
+            unset($_SESSION['username']);
+            unset($_SESSION['name']);
+            header('Location: http://northware-cockpit.test/login.php?logout');
+        } 
+        elseif (!isset($_SESSION['username'])) {
+            header('Location: http://northware-cockpit.test/login.php');
+        }    
     }
 ?>
 
@@ -25,9 +27,11 @@
     <link rel="shortcut icon" href="http://northware-cockpit.test/utilities/favicon-<?php echo $service ?>.png" type="image/x-icon">
     <link rel="stylesheet" href="http://northware-cockpit.test/css/main.css">
     <link rel="stylesheet" href="http://northware-cockpit.test/css/<?php echo $service ?>.css">
+    <script src="http://northware-cockpit.test/js/main.js"></script>
     
     <title><?php if (isset($siteTitle)) {echo $siteTitle.' | ';} echo $service_brand ?></title>
 </head>
+<?php if (!isset($no_body) OR $no_body != true) {?>
 <body>
     <nav class="navbar <?php echo $service_navtheme ?> navbar-expand-md mb-4 fixed-top bg-<?php echo $service ?>">
         <div class="container-fluid shadow">
@@ -62,7 +66,7 @@
                         </a>
                     </div>
                 </div>
-                <a href="http://northware-cockpit.test/" class="navbar-brand"><?php echo $service_brand ?></a>
+                <a href="http://northware-cockpit.test/<?php if ($service!='cockpit') {echo $service;} ?>" class="navbar-brand"><?php echo $service_brand ?></a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -90,5 +94,5 @@
             </div>
         </div>
     </nav>
-
-    <div class="container-lg wrapper">
+    <main class="container-lg wrapper">
+<?php } ?>

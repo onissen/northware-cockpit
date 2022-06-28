@@ -1,0 +1,11 @@
+@import finance/_variables
+@import bs-theme
+@import global-var
+
+.bg-finance
+    background-color: $primary
+    color: white
+
+body
+    @include bs-btn-primary ($primary: $primary, $color: white)
+    @include LinkBtn($color: $primary)
