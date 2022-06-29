@@ -81,6 +81,14 @@ button, input, optgroup, select, textarea, option {
   inset: 50px 0px auto auto;
 }
 
+.dropdown-align-inherit[data-bs-popper] {
+  inset: 50px 0px auto 0;
+}
+
+.dropdown-menu {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
 .dropdown-menu-dark button:hover, .dropdown-menu-dark button:active, .dropdown-menu-dark button:focus, .dropdown-menu-dark a:hover, .dropdown-menu-dark a:active, .dropdown-menu-dark a:focus {
   background-color: rgba(255, 255, 255, 0.15);
 }

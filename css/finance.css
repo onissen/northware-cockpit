@@ -64,4 +64,13 @@ body .dropdown-menu-dark {
   background-color: #83060B;
 }
 
+table a {
+  text-decoration: none;
+  color: #83060B;
+}
+table a:hover {
+  color: #690509;
+  text-decoration: underline;
+}
+
 /*# sourceMappingURL=finance.css.map */

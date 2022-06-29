@@ -6,6 +6,11 @@
         if ($_POST['action'] == 'logout') {
             unset($_SESSION['username']);
             unset($_SESSION['name']);
+            unset($_SESSION['rcockpit']);
+            unset($_SESSION['rfinance']);
+            unset($_SESSION['rhures']);
+            unset($_SESSION['rtrader']);
+            unset($_SESSION['client']);
             header('Location: http://northware-cockpit.test/login.php?logout');
         } 
         elseif (!isset($_SESSION['username'])) {
@@ -81,7 +86,7 @@
                         <a href="#" class="dropdown-toggle nav-link" id="toggle-account" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa-solid fa-user me-1"></i> <?php echo $_SESSION['name'] ?>
                         </a>
-                        <ul class="dropdown-menu dropdown-align-right dropdown-menu-dark shadow-sm" aria-labelledby="toggle-account" data-popper-placement="bottom-end">
+                        <ul class="dropdown-menu dropdown-align-right dropdown-menu-dark" aria-labelledby="toggle-account" data-popper-placement="bottom-end">
                             <li><a href="#" class="dropdown-item disabled"><?php echo $_SESSION['name'] ?></a>
                             </li>
                             <form method="post">
