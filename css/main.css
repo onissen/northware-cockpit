@@ -27,6 +27,10 @@ button, input, optgroup, select, textarea, option {
   font-family: "Nunito", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.icon-big {
+  font-size: 2.5rem;
+}
+
 @font-face {
   font-family: "Nunito";
   src: url("./../utilities/fonts/nunito.ttf") format("truetype");
@@ -46,6 +50,10 @@ h1, h2, h3, h4, h5, h6 {
 
 button, input, optgroup, select, textarea, option {
   font-family: "Nunito", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.icon-big {
+  font-size: 2.5rem;
 }
 
 .navbar-brand {

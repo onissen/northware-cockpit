@@ -1,6 +1,6 @@
 <?php
-    require 'service-variables.php';
     require 'connection.php';
+    require 'service-variables.php';
 
     if (!isset($noredirect) OR $noredirect!= true AND isset($_POST['action'])) {
         if ($_POST['action'] == 'logout') {

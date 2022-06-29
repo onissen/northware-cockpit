@@ -10,6 +10,12 @@
     if ($service == 'finance') {
         $service_brand = 'Northware Finance';
         $service_navtheme = 'navbar-dark';
+        
+        if (!isset($noredirect) OR $noredirect!=true) {
+            if (!isset($_SESSION['client'])) {
+                header('Location: index.php');
+            }
+        }
     }
 
 ?>

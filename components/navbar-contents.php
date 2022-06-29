@@ -12,10 +12,10 @@
 <?php if ($service == 'finance') { ?>
     <ul class="navbar-nav me-auto mb-2 mb-md-0">
         <li class="nav-item">
-            <a href="#" class="nav-link">Start</a>
+            <a href="dashboard.php" class="nav-link">Start</a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link">Test</a>
+            <a href="index.php?changeclient" class="nav-link">Mandanten wechseln</a>
         </li>
     </ul>
 <?php } ?>
