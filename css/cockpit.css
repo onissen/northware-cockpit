@@ -66,6 +66,20 @@ body .btn-primary:active {
 body .btn-primary:focus {
   box-shadow: 0 0 0 0.25rem rgba(128, 188, 234, 0.5);
 }
+body .link-btn-primary {
+  color: #0079D5;
+}
+body .link-btn-primary:hover {
+  background-color: #e6f2fb;
+  color: #0061aa;
+}
+body .link-btn-secondary {
+  color: #5D656C;
+}
+body .link-btn-secondary:hover {
+  background-color: #eff0f0;
+  color: #4a5156;
+}
 body .dropdown-menu-dark {
   background-color: #0079D5;
 }
