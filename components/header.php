@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="http://northware-cockpit.test/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://northware-cockpit.test/utilities/fontawesome/css/all.css">
     <link rel="stylesheet" href="http://northware-cockpit.test/utilities/bootstrap-icons/bootstrap-icons.css">
-    <link rel="shortcut icon" href="http://northware-cockpit.test/utilities/favicon-<?php echo $service ?>.png" type="image/x-icon">
+    <link rel="shortcut icon" href="http://northware-cockpit.test/utilities/logos/favicon-<?php echo $service ?>.svg" type="image/x-icon">
     <link rel="stylesheet" href="http://northware-cockpit.test/css/main.css">
     <link rel="stylesheet" href="http://northware-cockpit.test/css/<?php echo $service ?>.css">
     <script src="http://northware-cockpit.test/js/main.js"></script>
