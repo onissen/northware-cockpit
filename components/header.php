@@ -33,8 +33,8 @@
 </head>
 <?php if (!isset($no_body) OR $no_body != true) {?>
 <body>
-    <nav class="navbar <?php echo $service_navtheme ?> navbar-expand-md mb-4 fixed-top bg-<?php echo $service ?>">
-        <div class="container-fluid shadow">
+    <nav class="navbar shadow <?php echo $service_navtheme ?> navbar-expand-md mb-4 fixed-top bg-<?php echo $service ?>">
+        <div class="container-fluid">
             <div class="dropdown">
                 <a href="#" class="dropdown-toggle nav-link" id="appbox-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="bi bi-grid-fill"></i>

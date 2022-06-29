@@ -123,11 +123,11 @@ button, input, optgroup, select, textarea, option {
 }
 
 .tile-cockpit {
-  background-color: #001C40;
+  background-color: #0079D5;
   color: white;
 }
 .tile-cockpit:hover {
-  border: 1px solid #001b3d;
+  border: 1px solid #0073ca;
 }
 
 .tile-finance {
@@ -210,7 +210,7 @@ button, input, optgroup, select, textarea, option {
   }
 }
 .wrapper {
-  margin-top: 3rem;
+  margin-top: 5rem;
   padding: 1rem;
   border-radius: 8px;
   width: 100%;

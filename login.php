@@ -22,16 +22,22 @@
         $checkPassword = password_verify($password, $passwordHashed);
 
         if (!$checkPassword) {
-            $Alert = '<div class="alert alert-warning" role="alert">Das Passwort ist falsch.</div>';
+            $Alert = 'Das Passwort ist falsch.';
+            $AlertTheme = 'warning';
         } else {
             $_SESSION['username'] = $userExists[0]['username'];
             $_SESSION['name'] = $userExists[0]['name'];
+            $_SESSION['rcockpit'] = $userExists[0]['role_cockpit'];
+            $_SESSION['rfinance'] = $userExists[0]['role_finance'];
+            $_SESSION['rhures'] = $userExists[0]['role_hures'];
+            $_SESSION['rtrader'] = $userExists[0]['role_trader'];
             header('Location:index.php');
         }
     }
 
     if (isset($_REQUEST['logout'])) {
-        $Alert = '<div class="alert alert-success" role="alert">Du wurdest abgemeldet.</div>';
+        $Alert = 'Du wurdest abgemeldet.';
+        $AlertTheme = 'success';
     }
 ?>
 
@@ -41,7 +47,12 @@
             <i class="fa-solid fa-briefcase"></i>
             <span>Northware Cockpit</span>
         </div>
-        <?php if (isset($Alert)) { ?><div class="alerts mb-4"><?php echo $Alert ?></div><?php } ?>
+        <?php if (isset($Alert)) { ?>
+            <div class=" alerts mb-4 alert alert-<?php echo $AlertTheme ?> alert-dismissible fade show" role="alert">
+                <?php echo $Alert ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php } ?>
         <div class="login-box">
             <h1>Login</h1>
             <form method="post">

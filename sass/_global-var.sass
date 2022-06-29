@@ -9,7 +9,7 @@ $secondary: #5D656C
 
 $border-radius: 8px
 
-$cockpit-prm: #001C40
+$cockpit-prm: #0079D5
 $finance-prm: #83060B
 $hures-prm: #03860F
 $trader-prm: #f8a711
@@ -31,4 +31,14 @@ $trader-prm: #f8a711
         &:hover
             background-color: mix($secondary, white, 10%)
             color: mix($secondary, black, 80%)
+
+@mixin LinkAlone($color)
+    a
+        text-decoration: none
+        color: $color
+
+        &:hover
+            color: mix($color, black, 80%)
+            text-decoration: underline
+    
     

@@ -16,7 +16,6 @@
             ?>
         </h1>
     </div>
-
     <div class="choose-app mt-5 row">
         <a href="/finance" class="app-link col">
             <div class="tile-finance app-item">
