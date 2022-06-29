@@ -56,5 +56,8 @@ body .link-btn-secondary:hover {
   background-color: #eff0f0;
   color: #4a5156;
 }
+body .dropdown-menu-dark {
+  background-color: #83060B;
+}
 
 /*# sourceMappingURL=finance.css.map */

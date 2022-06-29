@@ -8,11 +8,10 @@
     background-color: $primary
     color: white
 
-.dropdown-menu-dark
-    @include DarkDropdown ($color: $primary)
 
 body
     @include bs-btn-primary ($primary: $primary, $color: white)
+    @include DarkDropdown ($color: $primary)
 
 table
     @include LinkAlone ($color: $primary)

@@ -48,10 +48,6 @@ button, input, optgroup, select, textarea, option {
   color: white;
 }
 
-.dropdown-menu-dark {
-  background-color: #0079D5;
-}
-
 body .btn-primary {
   background-color: #0079D5;
   color: white;
@@ -69,6 +65,9 @@ body .btn-primary:active {
 }
 body .btn-primary:focus {
   box-shadow: 0 0 0 0.25rem rgba(128, 188, 234, 0.5);
+}
+body .dropdown-menu-dark {
+  background-color: #0079D5;
 }
 
 table a {
