@@ -46,6 +46,22 @@ body .btn-primary:active {
 body .btn-primary:focus {
   box-shadow: 0 0 0 0.25rem rgba(193, 131, 133, 0.5);
 }
+body .btn-outline-primary {
+  color: #83060B;
+  border-color: #83060B;
+}
+body .btn-outline-primary:hover, body .btn-outline-primary:focus, body .btn-outline-primary:active {
+  color: white;
+  background-color: #83060B;
+  border-color: #83060B;
+}
+body .btn-outline-primary:focus {
+  box-shadow: 0 0 0 0.25rem rgba(131, 6, 11, 0.5);
+}
+body .form-select:focus, body .form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgba(162, 68, 72, 0.25);
+  border-color: rgba(162, 68, 72, 0.5);
+}
 body .link-btn-primary {
   color: #83060B;
 }
@@ -62,6 +78,16 @@ body .link-btn-secondary:hover {
 }
 body .dropdown-menu-dark {
   background-color: #83060B;
+}
+body h2 .breadcrumb li a {
+  color: #83060B;
+}
+body h2 .breadcrumb li a:hover {
+  color: #690509;
+}
+body .table thead {
+  color: #83060B;
+  background-color: #f3e6e7;
 }
 
 table a {

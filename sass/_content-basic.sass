@@ -32,3 +32,23 @@
     &:hover
             box-shadow: $box-shadow-sm
             transition: border-color .167s linear,box-shadow .167s linear
+
+h2
+    .breadcrumb li, .breadcrumb li.active
+        color: black
+
+        a
+            text-decoration: none
+
+.breadcrumb li.active
+        &::before
+            content: "\203A"
+            color: #ccc
+            font-variation-settings: $wght-xlight
+
+        &:first-child::before
+            content: ""
+
+.table
+    thead
+        font-variation-settings: $wght-sbold

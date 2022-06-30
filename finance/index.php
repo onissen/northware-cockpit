@@ -23,14 +23,8 @@
             <span>Northware Financials</span>
         </div>
 
-        <div class="userconfirmation-box mb-4">
+        <div class="userconfirmation-box mb-4 d-flex justify-content-center">
             <div class="current-user float-start"><i class="fa-solid fa-user"></i> <?php echo $_SESSION['name'] ?></div>
-            <div class="signout-link text-end">
-                <form method="post">
-                    <input type="hidden" name="action" value="logout">
-                    <button type="submit" class="btn btn-link link-btn link-btn-secondary"><i class="fa-solid fa-arrow-right-from-bracket"></i> Abmelden</button>
-                </form>
-            </div>
         </div>
 
         <div class="login-box">

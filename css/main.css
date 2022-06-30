@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   margin: 0;
 }
@@ -253,6 +254,26 @@ button, input, optgroup, select, textarea, option {
 .link-btn:hover {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   transition: border-color 0.167s linear, box-shadow 0.167s linear;
+}
+
+h2 .breadcrumb li, h2 .breadcrumb li.active {
+  color: black;
+}
+h2 .breadcrumb li a, h2 .breadcrumb li.active a {
+  text-decoration: none;
+}
+
+.breadcrumb li.active::before {
+  content: "›";
+  color: #ccc;
+  font-variation-settings: "wght" 200;
+}
+.breadcrumb li.active:first-child::before {
+  content: "";
+}
+
+.table thead {
+  font-variation-settings: "wght" 600;
 }
 
 /*# sourceMappingURL=main.css.map */

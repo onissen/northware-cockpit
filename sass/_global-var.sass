@@ -41,5 +41,16 @@ $trader-prm: #f8a711
         &:hover
             color: mix($color, black, 80%)
             text-decoration: underline
-    
-    
+
+@mixin H2Breadcrumb ($color)
+    h2 .breadcrumb li a
+        color: $color
+
+        &:hover
+            color: mix(black, $color, 20%)
+
+@mixin Tables($color)
+    .table
+        thead
+            color: $color
+            background-color: mix($color, white, 10%)
