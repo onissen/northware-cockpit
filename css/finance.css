@@ -19,6 +19,10 @@ button, input, optgroup, select, textarea, option {
   font-family: "Nunito", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+strong, b {
+  font-variation-settings: "wght" 700;
+}
+
 .icon-big {
   font-size: 2.5rem;
 }
@@ -97,6 +101,15 @@ table a {
 table a:hover {
   color: #690509;
   text-decoration: underline;
+}
+
+.filter-list .row > div:not(:last-of-type) {
+  padding-right: 0;
+}
+.filter-list .row > button {
+  padding-left: 0;
+  padding-right: 0;
+  margin-right: 0.75rem;
 }
 
 /*# sourceMappingURL=finance.css.map */

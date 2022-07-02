@@ -19,6 +19,10 @@ button, input, optgroup, select, textarea, option {
   font-family: "Nunito", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+strong, b {
+  font-variation-settings: "wght" 700;
+}
+
 .icon-big {
   font-size: 2.5rem;
 }

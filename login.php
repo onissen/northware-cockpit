@@ -48,9 +48,8 @@
             <span>Northware Cockpit</span>
         </div>
         <?php if (isset($Alert)) { ?>
-            <div class=" alerts mb-4 alert alert-<?php echo $AlertTheme ?> alert-dismissible fade show" role="alert">
+            <div class=" alerts mb-4 alert alert-<?php echo $AlertTheme ?>" role="alert">
                 <?php echo $Alert ?>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         <?php } ?>
         <div class="login-box">
