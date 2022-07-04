@@ -46,10 +46,6 @@
     $data_list = $db_finance->query($sql_list)->fetchAll();
 
 
-    // Mandanten
-    // $sql_clients = "SELECT mid, cname FROM clients ORDER BY mid";
-    // $data_clients = $db_cockpit->query($sql_clients)->fetchAll();
-
     if (isset($_REQUEST['id']) AND $_REQUEST['id'] != 'new') {
         $id = $_REQUEST['id'];
         $sql = "SELECT * FROM kostenstellen WHERE kstid = $id";
@@ -92,10 +88,6 @@
             $mid = $_POST['mid'];
             $sql_snippet[] .= 'mid = :mid';
         }
-        if ($_POST['kstid']!='') {
-            $kstid = intval($_POST['kstid']);
-            $sql_snippet[] .= 'kstid = :kstid';
-        }
         if ($_POST['kst_name']!='') {
             $kst_name = $_POST['kst_name'];
             $sql_snippet[] .= 'kst_name = :kst_name';
@@ -122,13 +114,12 @@
         $sql = $db_finance->prepare($sql_query);
 
         if(isset($mid)){$sql->bindParam(':mid', $mid);}
-        if(isset($kstid)){$sql->bindParam(':kstid', $kstid);}
         if(isset($kst_name)){$sql->bindParam(':kst_name', $kst_name);}
         if(isset($activated)){$sql->bindParam(':activated', $activated);}
         if(isset($deactivated)){$sql->bindParam(':deactivated', $deactivated);}
 
         if ($sql->execute()) {
-            $Alert = 'Die Kostenstelle '.$kstid.' (M'.$mid.': '.$kst_name.')'.' wurde verändert.';
+            $Alert = 'Die Kostenstelle '.$id.' (M'.$mid.': '.$kst_name.')'.' wurde verändert.';
             $AlertTheme = 'success';
 
         }

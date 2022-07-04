@@ -172,7 +172,7 @@ else { ?>
         <div class="row mb-3">
             <label for="input-kstid" class="form-label col-form-label col-lg-2">Kst-ID</label>
             <div class="col-lg-5">
-                <input type="text" name="kstid" id="input-kstid" class="form-control" placeholder="00000" required value="<?php echo $kst->kstid ?>">
+                <input type="text" id="input-kstid" class="form-control" value="<?php echo $kst->kstid ?>" disabled>
             </div>
         </div>
 

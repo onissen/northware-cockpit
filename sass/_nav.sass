@@ -1,11 +1,12 @@
 .navbar-brand
     font-variation-settings: $wght-sbold
 
-.nav-link
-    color: rgba(255, 255, 255, 0.75)
+.navbar-dark
+    .nav-link
+        color: rgba(255, 255, 255, 0.75)
 
-    &:hover, &:focus
-        color: rgba(255, 255, 255, 0.9)
+        &:hover, &:focus
+            color: rgba(255, 255, 255, 0.9)
 
 .right-nav
     color: white
@@ -19,7 +20,7 @@
     inset: 50px 0px auto auto
 
 .dropdown-align-inherit[data-bs-popper]
-    inset: 50px 0px auto 0
+    inset: 50px auto auto 0
 
 .dropdown-menu
     box-shadow: $box-shadow-sm
@@ -76,4 +77,6 @@
         font-variation-settings: $wght-sbold
 
 @import app-theme
-    
+
+.sidebar
+    border-right: 1px solid #ccc

@@ -20,8 +20,8 @@
                     Stammdaten
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark dropdown-align-inherit" aria-labelledby="stammdatenDropdown">
-                    <li><a class="dropdown-item" href="konten.php">Kontenplan</a></li>
-                    <li><a class="dropdown-item" href="kostenstellen.php">Kostenstellen</a></li>
+                    <li><a class="dropdown-item" href="konten.php">Kontenverwaltung</a></li>
+                    <li><a class="dropdown-item" href="kostenstellen.php">Verwaltung Kostenstellen</a></li>
                 </ul>
             </li>
         <?php } ?>
