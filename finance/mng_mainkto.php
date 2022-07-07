@@ -6,7 +6,8 @@
                 <select name="qclass" id="select_qclass" class="form-select">
                     <option value="" selected disabled>- wählen -</option>
                     <?php foreach ($data_ktoclass as $key) { ?>
-                        <option value="<?php echo $key['classid'] ?>"><?php echo $key['classid'].' / '.$key['class_name'].' / '.$key['quant_mainkto'].' Hauptkonten' ?></option>
+                        <option value="<?php echo $key['classid'] ?>">
+                        <?php echo $key['classid'].' / '.$key['class_name'].' / '.$key['quant_mainkto'].' Hauptkonten' ?></span></option>
                     <?php } ?>
                 </select>
             </div>
@@ -55,7 +56,7 @@
                         </td>
                         <?php if ($_SESSION['rfinance'] == 'admin') {?> 
                             <td class="actionbar">
-                                <a class="link-btn-sm link-btn-danger cursor-pointer" onclick="deleteMainKto(<?php echo $main['mainid'] ?>)" id = "test" ><i class="fa-solid fa-trash-can"></i></a>
+                                <a class="link-btn-sm link-btn-danger cursor-pointer" onclick="deleteMainKto('<?php echo $main['mainid'] ?>')" id = "test" ><i class="fa-solid fa-trash-can"></i></a>
                             </td>
                         <?php } ?>
                     </tr>
@@ -98,9 +99,9 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row mb-3">
             <label for="select-impact" class="form-label col-form-label col-2">Bilanzauswirkung</label>
-            <div class="col-8 mb-3">
+            <div class="col-8">
                 <select name="impact" id="select_impact" class="form-select" required>
                     <option value="" selected disabled>- wählen -</option>
                     <option value="active">Aktivkonto</option>
@@ -109,6 +110,11 @@
                     <option value="outlay">Aufwandskonto</option>
                 </select>
             </div>
+        </div>
+        
+        <div class="row mb-3">
+            <label for="input_higherkto" class="form-label col-form-label col-2">Übergeornete Bilanzposition</label>
+            <div class="col-5"><input type="text" name="higher_kto" id="input_higherkto" class="form-control" datalist="mainkto-list"></div>
         </div>
 
         <button type="submit" class="btn btn-primary" name="sub-newmain">Hauptkonto anlegen</button>
@@ -145,9 +151,9 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row mb-3">
             <label for="select-impact" class="form-label col-form-label col-2">Bilanzauswirkung</label>
-            <div class="col-8 mb-3">
+            <div class="col-8">
                 <select name="impact" id="select_impact" class="form-select" required>
                     <option value="" disabled <?php if($this_ktomain->impact == NULL) {echo 'selected';} ?>>- wählen -</option>
                     <option value="active" <?php if($this_ktomain->impact == 'active') {echo 'selected';} ?>>Aktivkonto</option>
@@ -156,6 +162,11 @@
                     <option value="outlay" <?php if($this_ktomain->impact == 'outlay') {echo 'selected';} ?>>Aufwandskonto</option>
                 </select>
             </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="input_higherkto" class="form-label col-form-label col-2">Übergeornetes Konto</label>
+            <div class="col-5"><input type="text" name="higher_kto" id="input_higherkto" class="form-control" value="<?php $this_ktomain->higher_kto ?>"></div>
         </div>
 
         <button type="submit" class="btn btn-primary" name="sub-editmain">Hauptkonto speichern</button>
