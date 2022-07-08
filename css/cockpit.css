@@ -55,6 +55,46 @@ strong, b {
   font-variation-settings: "wght" 600;
 }
 
+#login-pwstack {
+  background: url(../utilities/bg-login-pwstack.jpg) no-repeat fixed center center;
+}
+
+.pw-row {
+  padding: 1rem 0;
+  border-radius: 8px;
+}
+.pw-row:hover, .pw-row:active {
+  background-color: #e6f2fb;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+.pw-row .info-text .username {
+  font-variation-settings: "wght" 700;
+}
+.pw-row .info-text .username a {
+  text-decoration: none;
+  color: #0079D5;
+}
+.pw-row .info-text .username a:hover {
+  color: #0061aa;
+  text-decoration: underline;
+}
+.pw-row .info-text .name {
+  opacity: 0.6;
+  font-size: 80%;
+}
+.pw-row .input-password {
+  width: calc(100% - 20px);
+  display: table-cell;
+}
+.pw-row .eye-toggle {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+.pw-row .eye-toggle:hover {
+  color: #0079D5;
+}
+
 .bg-cockpit {
   background-color: #0079D5;
   color: white;

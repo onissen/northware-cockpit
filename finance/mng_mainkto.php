@@ -56,7 +56,7 @@
                         </td>
                         <?php if ($_SESSION['rfinance'] == 'admin') {?> 
                             <td class="actionbar">
-                                <a class="link-btn-sm link-btn-danger cursor-pointer" onclick="deleteMainKto('<?php echo $main['mainid'] ?>')" id = "test" ><i class="fa-solid fa-trash-can"></i></a>
+                                <a class="link-btn-sm link-btn-danger cursor-pointer" onclick="deleteMainKto('<?php echo $main['mainid'] ?>')"><i class="fa-solid fa-trash-can"></i></a>
                             </td>
                         <?php } ?>
                     </tr>

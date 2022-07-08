@@ -61,7 +61,7 @@
                 </div>
 
                 <div class="form-floating my-3">
-                    <input type="password" name="password" id="username" class="form-control" autocomplete="off" placeholder="Benutzername">
+                    <input type="password" name="password" id="username" class="form-control" autocomplete="off" placeholder="Passwort">
                     <label for="password" class="floating-label">Passwort</label>
                 </div>
 

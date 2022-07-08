@@ -1,0 +1,32 @@
+#login-pwstack
+    background: url(../utilities/bg-login-pwstack.jpg) no-repeat fixed center center
+
+.pw-row
+    padding: 1rem 0
+    border-radius: $border-radius
+
+    &:hover, &:active
+        background-color: mix($primary, white, 10%)
+        box-shadow: $box-shadow-sm
+
+    .info-text
+        .username
+            font-variation-settings: $wght-bold
+            @include LinkAlone($primary)
+        
+        .name
+            opacity: .6
+            font-size: 80%
+
+    
+    .input-password
+        width: calc( 100% - 20px )
+        display: table-cell
+
+    .eye-toggle
+        background-color: transparent
+        border: none
+        padding: 0
+
+        &:hover
+            color: $primary
