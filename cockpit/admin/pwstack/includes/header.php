@@ -32,6 +32,7 @@
     <link rel="shortcut icon" href="http://northware-cockpit.test/utilities/logos/favicon-<?php echo $service ?>.svg" type="image/x-icon">
     <link rel="stylesheet" href="http://northware-cockpit.test/css/main.css">
     <link rel="stylesheet" href="http://northware-cockpit.test/css/<?php echo $service ?>.css">
-    
+    <!-- <script src="http://northware-cockpit.test/js/main.js"></script> -->
+
     <title><?php if (isset($siteTitle)) {echo $siteTitle.' | ';} echo $service_brand ?></title>
 </head>

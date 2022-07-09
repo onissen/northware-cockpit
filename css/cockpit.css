@@ -95,6 +95,21 @@ strong, b {
   color: #0079D5;
 }
 
+.otp-input-fields {
+  display: flex;
+  flex-direction: row;
+}
+.otp-input-fields input {
+  margin-right: 1rem;
+  text-align: center;
+}
+.otp-input-fields input:last-child {
+  margin-right: 0;
+}
+.otp-input-fields input:focus {
+  color: #0079D5;
+}
+
 .bg-cockpit {
   background-color: #0079D5;
   color: white;

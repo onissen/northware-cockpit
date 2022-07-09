@@ -3,6 +3,7 @@
     if(!isset($_SESSION['unique_id'])) {
         header("Location: login.php");
     }
+
 ?>
 <?php 
     $service = 'cockpit';
@@ -10,7 +11,7 @@
     include_once "includes/header.php";
     require_once("includes/config.php");
 
-    $userId = $_SESSION['unique_id'];
+    // $userId = $_SESSION['unique_id'];
     $res = $conn->query("SELECT * FROM pwm_passwords ORDER BY username");
     $array = array();
 
