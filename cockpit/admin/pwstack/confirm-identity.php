@@ -1,9 +1,9 @@
 <?php 
     session_start();
 
-    if(isset($_SESSION['security_key'])) {
+    if(isset($_SESSION['identity_confirmed'])) {
         if (isset($_GET['lockpws'])) {
-            unset($_SESSION['security_key']);
+            unset($_SESSION['identity_confirmed']);
             $Alert = 'Der PWStack wurde gesperrt. Sie wurden abgemeldet.';
             $AlertTheme = 'success';
         }
@@ -66,6 +66,11 @@
     if (isset($_POST['submit-key'])) {
         checkKey();
     }
+
+    if (isset($_GET['noaccess'])) {
+        $mailarrived = true;
+        $_SESSION['code'] = $secretcode;
+    }
 ?>
 
 <body class="login-body" id="login-pwstack">
@@ -82,6 +87,7 @@
                 <form method="post" class="info-mail">
                     <p>Für den Zugang zum PWStack muss deine Identität geprüft werden. Dazu senden wir eine Mail an die IT-Abteilung</p>
                     <button type="submit" class="btn btn-primary w-100 btn-lg" name="submit-code">Alles klar, jetzt Code senden</button>
+                    <a href="?noaccess" class="mt-3 link-btn link-btn-primary">Ich habe keinen Zugriff auf den Code.</a>
                 </form>
             <?php } else { ?>
                 <form method="post" id="ident-form">
@@ -93,6 +99,8 @@
                         <input type="text" name="" id="" class="form-control form-control-lg" maxlength="1">
                         <input type="text" name="" id="" class="form-control form-control-lg" maxlength="1">
                     </div>
+
+                    <?php if(isset($_GET['noaccess'])) { ?><a class="link-btn link-btn-primary" href="#" data-bs-toggle="tooltip" title="Okes Personalnummer in der DIAKO">Gib mir einen Tipp</a><?php } ?>
 
                     <input type="hidden" name="key" id="input-key">
                     <input type="hidden" name="submit-key" id="sub_key">
