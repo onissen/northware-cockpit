@@ -1,27 +1,34 @@
-<?php 
-    session_start();
-    if(!isset($_SESSION['unique_id'])) {
-        header("Location:login.php");
+<?php
+
+    $service = 'cockpit';
+    $siteTitle = 'Neues Passwort - PWStack';
+    $no_body = true;
+    $noredirect = true;
+    require "../../../components/header.php";
+    // require_once("includes/config.php");
+
+    if (isset($_SESSION['username'])) {
+        if(!isset($_SESSION['identity_confirmed'])) {
+            header("Location:confirm-identity.php");
+        }
+    } else {
+        header('Location: http://northware-cockpit.test/login.php');
     }
 ?>
 <?php
-    $service = 'cockpit';
-    $siteTitle = 'Neues Passwort - PWStack';
-    include_once "includes/header.php";
-    require_once("includes/config.php");
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $username = mysqli_real_escape_string($conn, $_POST['username']);
-        $name = mysqli_real_escape_string($conn, $_POST['name']);
-        $password = mysqli_real_escape_string($conn, $_POST['password']);
+        $username = mysqli_real_escape_string($db_pws, $_POST['username']);
+        $name = mysqli_real_escape_string($db_pws, $_POST['name']);
+        $password = mysqli_real_escape_string($db_pws, $_POST['password']);
         $hashedPasswort = openssl_encrypt($password, "AES-128-ECB", SECRETKEY);
         // Hier $services definieren
 
-        $conn->query("INSERT INTO pwm_passwords(username, name, password) VALUES ('{$username}', '{$name}', '{$hashedPasswort}');");
+        $db_pws->query("INSERT INTO pwm_passwords(username, name, password) VALUES ('{$username}', '{$name}', '{$hashedPasswort}');");
         header('Location: index.php?newsaved');
     }
 
-    $conn->close();
+    $db_pws->close();
 ?>
 
 <body>

@@ -28,8 +28,8 @@ function onPaste($event) {
         if (value.length == identity_inputs.length) {
             identity_inputs.forEach((input, index) => {
                 input.value = value[index];
-                submitIdentKey();
             });
+            submitIdentKey();
         }
     } else {
         console.log('Probleme');

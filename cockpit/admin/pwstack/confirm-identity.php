@@ -1,5 +1,9 @@
-<?php 
-    session_start();
+<?php
+    $service = 'cockpit';
+    $siteTitle = 'PWStack Identitätsprüfung';
+    $no_body = true;
+    $noredirect = true;
+    require "../../../components/header.php";
 
     if(isset($_SESSION['identity_confirmed'])) {
         if (isset($_GET['lockpws'])) {
@@ -9,11 +13,6 @@
         }
         else {header("Location:index.php");}
     }
-
-    $service = 'cockpit';
-    $siteTitle = 'PWStack Identitätsprüfung';
-    include_once "includes/header.php";
-    require_once("includes/config.php");
 
     $sendmail = false;
     function sendCode() {
@@ -26,7 +25,7 @@
             <p>Wir haben am '.date('d.m.Y H:i').' Uhr die Anforderung fuer einen Identifizierungscode fuer das Northware PWStack erhalten.<p>
             <p>Der Identifizierungscode lautet: <b>'.$code.'</b></p>
             <br>
-            <p>Viele Grueße vom Northware PWStack</p>
+            <p>Viele Gruesse vom Northware PWStack</p>
         </body>
         </html>
         ';
@@ -65,6 +64,9 @@
     
     if (isset($_POST['submit-key'])) {
         checkKey();
+        echo 'Code: '.$_SESSION['code'];
+        echo 'Key: '.$key;
+        print_r($_POST);
     }
 
     if (isset($_GET['noaccess'])) {
@@ -100,7 +102,7 @@
                         <input type="text" name="" id="" class="form-control form-control-lg" maxlength="1">
                     </div>
 
-                    <?php if(isset($_GET['noaccess'])) { ?><a class="link-btn link-btn-primary" href="#" data-bs-toggle="tooltip" title="Okes Personalnummer in der DIAKO">Gib mir einen Tipp</a><?php } ?>
+                    <?php if(isset($_GET['noaccess'])) { ?><a class="link-btn link-btn-primary" href="#" data-bs-toggle="tooltip" title="<?php echo $secrettipp ?>">Gib mir einen Tipp</a><?php } ?>
 
                     <input type="hidden" name="key" id="input-key">
                     <input type="hidden" name="submit-key" id="sub_key">
@@ -112,5 +114,5 @@
 
 
 <?php 
-    include_once "includes/footer.php";
+    include_once "../../../components/footer.php";
 ?>

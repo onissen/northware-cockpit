@@ -1,18 +1,21 @@
 <?php 
-    session_start();
-    if(!isset($_SESSION['unique_id'])) {
-        header("Location: login.php");
-    }
-
-?>
-<?php 
     $service = 'cockpit';
     $siteTitle = 'PWStack Home';
-    include_once "includes/header.php";
-    require_once("includes/config.php");
+    $no_body = true;
+    $noredirect = true;
+    require '../../../components/header.php';
+?>
+    <?php
+    if (isset($_SESSION['username'])) {
+        if(!isset($_SESSION['identity_confirmed'])) {
+            header("Location:confirm-identity.php");
+        }
+    } else {
+        header('Location: http://northware-cockpit.test/login.php');
+    }
+    
 
-    // $userId = $_SESSION['unique_id'];
-    $res = $conn->query("SELECT * FROM pwm_passwords ORDER BY username");
+    $res = $db_pws->query("SELECT * FROM pwm_passwords ORDER BY username");
     $array = array();
 
     while($item = mysqli_fetch_array($res, MYSQLI_ASSOC)) {
@@ -22,7 +25,7 @@
     if (isset($_POST['sub-delPW'])) {
         $uid = $_POST['uid-delete'];
         $username = $_POST['username-delete'];
-        $sql = mysqli_query($conn, "DELETE FROM pwm_passwords WHERE id = $uid;");
+        $sql = mysqli_query($db_pws, "DELETE FROM pwm_passwords WHERE id = $uid;");
         $Alert = 'Der Eintrag zu Benutzer'.$username.' (ID '.$uid.' ) wurde gelöscht.';
         $AlertTheme = 'success';
     }
@@ -32,7 +35,12 @@
         $AlertTheme = 'success';
     }
 
-    $conn->close();
+    if (isset($_GET['editsaved'])) {
+        $Alert = 'Der Benutzer '.$_GET['editsaved'].' wurde gespeichert.';
+        $AlertTheme = 'success';
+    }
+    
+    $db_pws->close();
 ?>
 
 <body>
@@ -48,7 +56,7 @@
             </div>
             <div class="col-lg-4">
                 <a href="new.php" role="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> Neu hinzufügen</a>
-                <a href="login.php?lockpws" role="button" class="btn btn-secondary"><i class="bi bi-shield-lock-fill"></i></i> PWStack sperren</a>
+                <a href="confirm-identity.php?lockpws" role="button" class="btn btn-secondary"><i class="bi bi-shield-lock-fill"></i></i> PWStack sperren</a>
             </div>
         </div>
         <?php if (isset($Alert)) { ?>
@@ -110,5 +118,5 @@
 </script>
 
 <?php 
-    include_once "includes/footer.php";
+    include_once "../../../components/footer.php";
 ?>

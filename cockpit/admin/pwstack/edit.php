@@ -1,31 +1,39 @@
 <?php 
-    session_start();
-    if(!isset($_SESSION['unique_id'])) {
-        header("Location:login.php");
+    $service = 'cockpit';
+    $siteTitle = 'Passwort bearbeiten - PWStack';
+    $no_body = true;
+    $noredirect = true;
+    require "../../../components/header.php";
+
+    if (isset($_SESSION['username'])) {
+        if(!isset($_SESSION['identity_confirmed'])) {
+            header("Location:confirm-identity.php");
+        }
+    } else {
+        header('Location: http://northware-cockpit.test/login.php');
     }
 ?>
 <?php
-    $service = 'cockpit';
-    $siteTitle = 'Passwort bearbeiten - PWStack';
-    include_once "includes/header.php";
-    require_once("includes/config.php");
+    if (isset($_REQUEST['uid'])) {
+        $id = $_REQUEST['uid'];
+        $res = $db_pws->query("SELECT * FROM pwm_passwords WHERE id = {$id}")->fetch_object();
+        $decryptedPw = openssl_decrypt($res->password, 'AES-128-ECB', SECRETKEY);
 
-    $id = $_REQUEST['uid'];
-    $res = $conn->query("SELECT * FROM pwm_passwords WHERE id = {$id}")->fetch_object();
-    $decryptedPw = openssl_decrypt($res->password, 'AES-128-ECB', SECRETKEY);
+        if (isset($_POST['submit_epassword'])) {
+            $id = $_REQUEST['uid'];
+            $username = $_POST['username'];
+            $name = $_POST['name'];
+            $password = $_POST['password'];
+            $hashedPassword = openssl_encrypt($password, "AES-128-ECB", SECRETKEY);
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $username = mysqli_real_escape_string($conn, $_POST['username']);
-        $name = mysqli_real_escape_string($conn, $_POST['name']);
-        $password = mysqli_real_escape_string($conn, $_POST['password']);
-        $hashedPasswort = openssl_encrypt($password, "AES-128-ECB", SECRETKEY);
-        // Hier $services definieren
+            $sql = $db_pws->prepare("UPDATE pwm_passwords SET username=?, name=?, password=? WHERE id=?");
+            $sql->bind_param('sssi', $username, $name, $hashedPassword, $id);
 
-        $conn->query("UPDATE pwm_passwords SET username = {$username}, name = {$name}, password = {$hashedPassword}");
-        header('Location: index.php?editsaved');
+            if ($sql->execute()) {
+                header('Location: index.php?editsaved='.$username);
+            }
+        }
     }
-
-    $conn->close();
 ?>
 
 <body>
@@ -43,7 +51,8 @@
         <?php } ?>
 
         <div class="my-3">
-            <form name="submit-edit" id="submit-edit" method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+            <?php if(isset($_REQUEST['uid'])) { ?>
+            <form name="submit-edit" id="submit-edit" method="post">
                 <div class="mb-3">
                     <label for="username" class="form-label">Benutzername</label>
                     <input type="text" class="form-control" id="username" name="username" placeholder="Benutzername" required value="<?php echo $res->username ?>">
@@ -61,8 +70,14 @@
                 </div>
 
                 <a href="index.php" role="button" class="btn btn-secondary"><i class="bi bi-arrow-left-short"></i> Zurück</a>
-                <button type="submit" class="btn btn-success"><i class="bi bi-check-lg"></i> Passwort speichern</button>
+                <button type="submit" class="btn btn-success" name="submit_epassword"><i class="bi bi-check-lg"></i> Passwort speichern</button>
             </form>
+            <?php } else { ?>              
+                <div class="alert alert-danger" role="alert">
+                    Da in dieser Ansicht keine Daten angezeigt werden könnten, werden Sie auf die Startseite zurück geleitet.
+                </div>
+                <meta http-equiv="refresh" content="3; URL= index.php">
+            <?php } ?>
         </div>
     </main>
 </body>
@@ -84,5 +99,5 @@
 </script>
 
 <?php 
-    include_once "includes/footer.php";
+    require "../../../components/footer.php";
 ?>
