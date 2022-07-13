@@ -67,6 +67,15 @@ strong, b {
   background-color: #e6f2fb;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 }
+.pw-row .role-icon {
+  font-size: 24px;
+  opacity: 0.6;
+  text-align: center;
+  color: #0079D5;
+}
+.pw-row .role-icon i {
+  vertical-align: middle;
+}
 .pw-row .info-text .username {
   font-variation-settings: "wght" 700;
 }
@@ -132,6 +141,18 @@ body .btn-primary:active {
 }
 body .btn-primary:focus {
   box-shadow: 0 0 0 0.25rem rgba(128, 188, 234, 0.5);
+}
+body .btn-outline-primary {
+  color: #0079D5;
+  border-color: #0079D5;
+}
+body .btn-outline-primary:hover, body .btn-outline-primary:focus, body .btn-outline-primary:active {
+  color: white;
+  background-color: #0079D5;
+  border-color: #0079D5;
+}
+body .btn-outline-primary:focus {
+  box-shadow: 0 0 0 0.25rem rgba(0, 121, 213, 0.5);
 }
 body .form-select:focus, body .form-control:focus {
   box-shadow: 0 0 0 0.25rem rgba(64, 155, 224, 0.25);

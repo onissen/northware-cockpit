@@ -16,8 +16,8 @@
 
     $sendmail = false;
     function sendCode() {
+        global $mail_itdept;
         $code = mt_rand(111111, 999999);
-        $mail_recipiant = 'it@nissen-group.de';
         $mail_subject = 'Code fuer das PWStack';
         $mail_message = '
         <html>
@@ -30,10 +30,11 @@
         </html>
         ';
         $mail_header[] = 'MIME-Version: 1.0';
+        $mail_header[] = 'From: Northware PWStack <pwstack@northware-cockpit.test>';
         $mail_header[] = 'Content-type: text/html; charset=iso-8859-1';
 
         global $sendmail;
-        $sendmail = mail($mail_recipiant, $mail_subject, $mail_message, implode("\r\n", $mail_header));
+        $sendmail = mail($mail_itdept, $mail_subject, $mail_message, implode("\r\n", $mail_header));
 
         $_SESSION['code'] = $code;
     }
@@ -92,6 +93,7 @@
                     <a href="?noaccess" class="mt-3 link-btn link-btn-primary">Ich habe keinen Zugriff auf den Code.</a>
                 </form>
             <?php } else { ?>
+                <p>Wir haben einen Identifizierungscode an die IT-Abteilung versendet. Bitte gebe diesen Code hier ein um auf das PWStack zuzugreifen.</p>
                 <form method="post" id="ident-form">
                     <div class="otp-input-fields my-3">
                         <input type="text" name="" id="" class="form-control form-control-lg" maxlength="1">

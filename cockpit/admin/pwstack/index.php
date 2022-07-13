@@ -15,7 +15,7 @@
     }
     
 
-    $res = $db_pws->query("SELECT * FROM pwm_passwords ORDER BY username");
+    $res = $db_pws->query("SELECT * FROM pws_users ORDER BY username");
     $array = array();
 
     while($item = mysqli_fetch_array($res, MYSQLI_ASSOC)) {
@@ -25,7 +25,7 @@
     if (isset($_POST['sub-delPW'])) {
         $uid = $_POST['uid-delete'];
         $username = $_POST['username-delete'];
-        $sql = mysqli_query($db_pws, "DELETE FROM pwm_passwords WHERE id = $uid;");
+        $sql = mysqli_query($db_pws, "DELETE FROM pws_users WHERE id = $uid;");
         $Alert = 'Der Eintrag zu Benutzer'.$username.' (ID '.$uid.' ) wurde gelöscht.';
         $AlertTheme = 'success';
     }
@@ -55,8 +55,8 @@
                 </h2>
             </div>
             <div class="col-lg-4">
-                <a href="new.php" role="button" class="btn btn-success"><i class="bi bi-plus-lg"></i> Neu hinzufügen</a>
-                <a href="confirm-identity.php?lockpws" role="button" class="btn btn-secondary"><i class="bi bi-shield-lock-fill"></i></i> PWStack sperren</a>
+                <a href="new.php" role="button" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Neu hinzufügen</a>
+                <a href="confirm-identity.php?lockpws" role="button" class="btn btn-outline-primary"><i class="bi bi-shield-lock-fill"></i></i> PWStack sperren</a>
             </div>
         </div>
         <?php if (isset($Alert)) { ?>
@@ -73,11 +73,18 @@
                 foreach ($array as $item) {
                     $decryptedPw = openssl_decrypt($item['password'], 'AES-128-ECB', SECRETKEY); ?>
                     <div class="pw-row row">
+                        <div class="col-lg-1 role-icon">
+                            <?php
+                                if ($item['type'] == 'department') {echo '<i class="fa-solid fa-people-group"></i>';}
+                                if ($item['type'] == 'person') {echo '<i class="fa-solid fa-user"></i>';}
+                                if ($item['type'] == 'group') {echo '<i class="fa-solid fa-user-group"></i>';}
+                            ?>
+                        </div>
                         <div class="col-lg-3 info-text">
                             <div class="username"><a href="edit.php?uid=<?php echo $item['id'] ?>"><?php echo $item['username'] ?></a></div>
                             <div class="name"><?php echo $item['name'] ?></div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-2">
                             <div class="input-group">
                                 <input type="password" id="<?php echo 'password-'.$counter ?>" readonly class="form-control-plaintext input-password" value="<?php echo $decryptedPw ?>">
                                 <span class="input-group-text eye-toggle"><i class="fa-solid fa-eye" style="cursor: pointer;" id="<?php echo 'password-'.$counter.'-eye' ?>" onclick="showPw('<?php echo 'password-'.$counter ?>')"> </i></span>
@@ -88,7 +95,7 @@
                             <span class="badge text-bg-primary">Services</span>
                         </div>
                         <div class="col-1">
-                            <a class="btn btn-sm btn-danger" onclick="deletePW(<?php echo $item['id'] ?>, '<?php echo $item['username'] ?>')"><i class="fa-solid fa-trash-can"></i></a>
+                            <a class="link-btn-sm link-btn-danger cursor-pointer" onclick="deletePW(<?php echo $item['id'] ?>, '<?php echo $item['username'] ?>')"><i class="fa-solid fa-trash-can"></i></a>
                         </div>
                     </div>
                 <?php $counter++; } } ?>
