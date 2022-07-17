@@ -17,34 +17,83 @@
     if (isset($_REQUEST['new_user'])) {
         $mode = 'new';
         $username = $_REQUEST['new_user'];
-    };
+    }
 
     if (isset($_REQUEST['edit_user'])) {
         $mode = 'edit';
         $username = $_REQUEST['edit_user'];
     }
+
     $user = $db_pws->query("SELECT id FROM pws_users WHERE username = '{$username}'")->fetch_object();
     $uid = $user->id;
 
+    if (isset($_POST['submit_role'])) {
+        $rowNames = array();
+
+        /********************************** FORMULARDATEN ÜBERGEBEN ******************** */
+
+        $role_nwcockpit = $_POST['role_nwcockpit'];
+        $rowNames[] = 'role_nwcockpit';
+
+        $role_nwfinance = $_POST['role_nwfinance'];
+        $rowNames[] = 'role_nwfinance';
+
+        $role_nwhures = $_POST['role_nwhures'];
+        $rowNames[] = 'role_nwhures';
+
+        $role_nwtrader = $_POST['role_nwtrader'];
+        $rowNames[] = 'role_nwtrader';
+
+        $role_companydata = $_POST['role_companydata'];
+        $rowNames[] = 'role_companydata';
+
+        $role_intranet = $_POST['role_intranet'];
+        $rowNames[] = 'role_intranet';
+
+        /******************************************************************************** */
+
+        $edit_rows = count($rowNames);
+        $insert_rows = array();
+        $update_rows = array();
+        $insert_phsnippet = array();
+        $insert_string = '';
+        $insert_phstring = '';
+        $update_string = '';
+        foreach ($rowNames as $key => $value) {
+            $insert_rows[$key] = $rowNames[$key];
+            $update_rows[$key] = $rowNames[$key].'=?';
+            $insert_phsnippet[$key] = '?';
+            if ($key != $edit_rows - 1) {
+                $insert_rows[$key] .=', ';
+                $insert_phsnippet[$key] .=', ';
+                $update_rows[$key] .=', ';
+            }
+            $insert_string .= $insert_rows[$key];
+            $insert_phstring .= $insert_phsnippet[$key];
+            $update_string .= $update_rows[$key];
+        }
+
+        if($mode == 'new') {$stmt = "INSERT INTO pws_userroles (user_id, $insert_string) VALUES($uid, $insert_phstring)"; }
+        if($mode == 'edit') {$stmt = "UPDATE pws_userroles SET $update_string WHERE user_id = $uid";}
+
+        $sql = $db_pws->prepare($stmt);
+
+        /********************* FORMULARDATEN BINDEN ************************************** */
+        $sql->bind_param('ssssss', $role_nwcockpit, $role_nwfinance, $role_nwhures, $role_nwtrader, $role_companydata, $role_intranet);     
+
+        if ($sql->execute()) {
+            if ($mode == 'new') {header('Location:index.php?new-complete='.$username);}
+            if ($mode == 'edit') {header('Location: index.php?roles-edited='.$username);}
+        }
+    } 
+
+
     if ($mode == 'edit') {
         $role = $db_pws->query("SELECT * FROM pws_userroles WHERE user_id = {$uid}")->fetch_array(MYSQLI_ASSOC);
-
-        if (isset($_POST['submit_role'])) {
-            $role_nwcockpit = $_POST['role_nwcockpit'];
-            $role_nwtrader = $_POST['role_nwtrader'];
-
-            $sql = $db_pws->prepare("UPDATE pws_userroles SET role_nwcockpit=?, role_nwtrader=? WHERE user_id = $uid");
-            $sql->bind_param('ss', $role_nwcockpit, $role_nwtrader);
-
-            if ($sql->execute()) {
-                $Alert = 'Die Rollen vom Benutzer '.$username.' wurden verändert.';
-                $AlertTheme = 'success';
-            }
-        }
     }
 ?>
 
-<?php
+<?php // fun CreateList
     $item = array();
 
     function CreateList() {
@@ -60,7 +109,7 @@
     }
 ?>
 
-<?php 
+<?php // fun PrintRoleList
     function PrintRoleList() { 
         global $app;
         global $appRow;
@@ -127,14 +176,54 @@
 
                 <div class="col-lg col-md">
                     <?php 
-                        $app = 'nw_trader';
-                        $AppTitle = 'Northware Trader';
-                        $appRow = 'role_nwtrader';
+                        $app = 'nw_finance';
+                        $appRow = 'role_nwfinance';
+                        $AppTitle = 'Northware Finance';
                         CreateList();
                         PrintRoleList();
                     ?>
                 </div>
 
+                <div class="col-lg col-md">
+                    <?php 
+                        $app = 'nw_hures';
+                        $appRow = 'role_nwhures';
+                        $AppTitle = 'Northware HuRes';
+                        CreateList();
+                        PrintRoleList();
+                    ?>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-lg col-md">
+                    <?php 
+                        $app = 'nw_trader';
+                        $appRow = 'role_nwtrader';
+                        $AppTitle = 'Northware Trader';
+                        CreateList();
+                        PrintRoleList();
+                    ?>
+                </div>
+
+                <div class="col-lg col-md">
+                    <?php 
+                        $app = 'companydata';
+                        $appRow = 'role_companydata';
+                        $AppTitle = 'Company Data';
+                        CreateList();
+                        PrintRoleList();
+                    ?>
+                </div>
+
+                <div class="col-lg col-md">
+                    <?php 
+                        $app = 'intranet';
+                        $AppTitle = 'Intranet';
+                        $appRow = 'role_intranet';
+                        CreateList();
+                        PrintRoleList();
+                    ?>
+                </div>
             </div>
             <button type="submit" class="btn btn-primary" name="submit_role"><i class="bi bi-check-lg"></i> Rollen vergeben</button>
         </form>

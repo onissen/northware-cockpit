@@ -119,6 +119,69 @@ strong, b {
   color: #0079D5;
 }
 
+.badge.text-bg-cockpit {
+  color: white !important;
+  background-color: #0079D5 !important;
+}
+.badge.text-bg-finance {
+  color: white !important;
+  background-color: #83060B !important;
+}
+.badge.text-bg-hures {
+  color: white !important;
+  background-color: #03860F !important;
+}
+.badge.text-bg-trader {
+  color: black !important;
+  background-color: #f8a711 !important;
+}
+.badge.text-bg-companydata {
+  color: white !important;
+  background-color: #007388 !important;
+}
+.badge.text-bg-intranet {
+  color: #f49900 !important;
+  background-color: black !important;
+}
+
+#headingNewRole .accordion-button, #headingExistingRoles .accordion-button {
+  font-variation-settings: "wght" 600;
+}
+#headingNewRole .accordion-button.collapsed, #headingExistingRoles .accordion-button.collapsed {
+  color: #0079D5;
+}
+
+.input-table a {
+  text-decoration: none;
+  color: #0079D5;
+}
+.input-table a:hover {
+  color: #0061aa;
+  text-decoration: underline;
+}
+.input-table *.form-text {
+  margin-left: 1em;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.row-labels, .row-inputs input {
+  width: 48%;
+  float: left;
+}
+
+.btn-outline-wp {
+  color: #32373c;
+  border-color: #32373c;
+}
+.btn-outline-wp:hover, .btn-outline-wp:focus, .btn-outline-wp:active {
+  color: white;
+  background-color: #32373c;
+  border-color: #32373c;
+}
+.btn-outline-wp:focus {
+  box-shadow: 0 0 0 0.25rem rgba(50, 55, 60, 0.5);
+}
+
 .bg-cockpit {
   background-color: #0079D5;
   color: white;
@@ -157,6 +220,14 @@ body .btn-outline-primary:focus {
 body .form-select:focus, body .form-control:focus {
   box-shadow: 0 0 0 0.25rem rgba(64, 155, 224, 0.25);
   border-color: rgba(64, 155, 224, 0.5);
+}
+body .accordion-button:not(.collapsed) {
+  color: #004f8a;
+  background-color: #e6f2fb;
+}
+body .accordion-button:not(.collapsed):focus {
+  border-color: #d9ebf9;
+  box-shadow: 0 0 0 0.25rem rgba(0, 121, 213, 0.25);
 }
 body .link-btn-primary {
   color: #0079D5;

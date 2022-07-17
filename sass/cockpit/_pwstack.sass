@@ -51,3 +51,53 @@
 
         &:focus
             color: $primary
+
+.badge
+    &.text-bg-cockpit
+        color: white !important
+        background-color: #0079D5 !important   
+    &.text-bg-finance
+        color: white !important
+        background-color: #83060B !important
+    &.text-bg-hures
+        color: white !important
+        background-color: #03860F !important
+    &.text-bg-trader
+        color: black !important
+        background-color: #f8a711 !important
+    &.text-bg-companydata
+        color: white !important
+        background-color: #007388 !important
+    &.text-bg-intranet
+        color: #f49900 !important
+        background-color: black !important
+
+#headingNewRole, #headingExistingRoles
+    .accordion-button
+        font-variation-settings: $wght-sbold
+
+    .accordion-button.collapsed
+        color: $primary
+
+.input-table
+    @include LinkAlone ($color: $primary)
+
+    *.form-text
+        margin-left: 1em
+        color: rgba(black, 0.5)
+
+.row-labels, .row-inputs input
+    width: 48%
+    float: left
+
+.btn-outline-wp
+        color: #32373c
+        border-color: #32373c
+
+        &:hover, &:focus, &:active
+            color: white
+            background-color: #32373c
+            border-color: #32373c
+        
+        &:focus
+            box-shadow: 0 0 0 0.25rem rgba(#32373c, .5)

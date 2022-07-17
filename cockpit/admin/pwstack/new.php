@@ -5,7 +5,6 @@
     $no_body = true;
     $noredirect = true;
     require "../../../components/header.php";
-    // require_once("includes/config.php");
 
     if (isset($_SESSION['username'])) {
         if(!isset($_SESSION['identity_confirmed'])) {

@@ -15,28 +15,32 @@
     }
     
 
-    $res = $db_pws->query("SELECT * FROM pws_users ORDER BY username");
+    $res = $db_pws->query("SELECT pws_users.*, pws_userroles.* FROM pws_users LEFT JOIN pws_userroles ON pws_users.id = pws_userroles.user_id ORDER BY pws_users.id");
     $array = array();
 
     while($item = mysqli_fetch_array($res, MYSQLI_ASSOC)) {
         $array[] = $item;
     }
-
     if (isset($_POST['sub-delPW'])) {
         $uid = $_POST['uid-delete'];
         $username = $_POST['username-delete'];
         $sql = mysqli_query($db_pws, "DELETE FROM pws_users WHERE id = $uid;");
-        $Alert = 'Der Eintrag zu Benutzer'.$username.' (ID '.$uid.' ) wurde gelöscht.';
+        $Alert = 'Der Eintrag zu Benutzer '.$username.' (ID '.$uid.') wurde gelöscht.';
         $AlertTheme = 'success';
     }
 
-    if (isset($_GET['newsaved'])) {
-        $Alert = 'Der neue Eintrag wurde gespeichert.';
+    if (isset($_GET['new-complete'])) {
+        $Alert = 'Der neue Benutzer '.$_GET['new-complete'].' wurde mit den angegebenen Rechten gespeichert.';
         $AlertTheme = 'success';
     }
 
-    if (isset($_GET['editsaved'])) {
-        $Alert = 'Der Benutzer '.$_GET['editsaved'].' wurde gespeichert.';
+    if (isset($_GET['useredited'])) {
+        $Alert = 'Der Benutzer '.$_GET['useredited'].' wurde gespeichert.';
+        $AlertTheme = 'success';
+    }
+
+    if (isset($_GET['roles-edited'])) {
+        $Alert = 'Die Rollen von '.$_GET['roles-edited'].' wurden gespeichert.';
         $AlertTheme = 'success';
     }
     
@@ -46,7 +50,7 @@
 <body>
     <main class="container-lg wrapper">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-6">
                 <h2>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item text-primary">PWStack</li>
@@ -54,14 +58,16 @@
                     </ol>
                 </h2>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-6">
                 <a href="new.php" role="button" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Neu hinzufügen</a>
+                <a href="edit-roles.php" role="button" class="btn btn-secondary"><i class="fa-solid fa-address-card"></i> Rollen und Services</a>
                 <a href="confirm-identity.php?lockpws" role="button" class="btn btn-outline-primary"><i class="bi bi-shield-lock-fill"></i></i> PWStack sperren</a>
             </div>
         </div>
         <?php if (isset($Alert)) { ?>
-            <div class=" alerts mb-4 alert alert-<?php echo $AlertTheme ?>" role="alert">
+            <div class=" alerts mb-4 alert alert-dismissible fade show alert-<?php echo $AlertTheme ?>" role="alert">
                 <?php echo $Alert ?>
+                <a role="button" class="btn-close" aria-label="Close" href="index.php"></a>
             </div>
         <?php } ?>
         <div class="my-3">
@@ -91,8 +97,13 @@
                             </div>
                         </div>
                         <div class="col-lg-5">
-                            <span class="badge text-bg-primary">Services</span>
-                            <span class="badge text-bg-primary">Services</span>
+                            <?php if (isset($item['role_nwcockpit']) AND $item['role_nwcockpit'] != '') {?> <span class="badge text-bg-cockpit">Northware Cockpit</span><?php } ?>
+                            <?php if (isset($item['role_nwfinance']) AND $item['role_nwfinance'] != '') {?> <span class="badge text-bg-finance">Northware Finance</span><?php } ?>
+                            <?php if (isset($item['role_nwhures']) AND $item['role_nwhures'] != '') {?> <span class="badge text-bg-hures">Northware HuRes</span><?php } ?>
+                            <?php if (isset($item['role_nwtrader']) AND $item['role_nwtrader'] != '') {?> <span class="badge text-bg-trader">Northware Trader</span><?php } ?>
+                            <?php if (isset($item['role_companydata']) AND $item['role_companydata'] != '') {?> <span class="badge text-bg-companydata">Company Data</span><?php } ?>
+                            <?php if (isset($item['role_intranet']) AND $item['role_intranet'] != '') {?> <span class="badge text-bg-intranet">Intranet</span><?php } ?>
+                            <a href="roles.php?edit_user=<?php echo $item['username'] ?>" class="btn btn-outline-secondary btn-sm"><i class="fa-solid fa-address-card"></i> Rollen verwalten</a>
                         </div>
                         <div class="col-1">
                             <a class="link-btn-sm link-btn-danger cursor-pointer" onclick="deletePW(<?php echo $item['id'] ?>, '<?php echo $item['username'] ?>')"><i class="fa-solid fa-trash-can"></i></a>

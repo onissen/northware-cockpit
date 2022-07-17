@@ -38,3 +38,15 @@
 
 .text-primary
     color: $primary !important
+
+
+@mixin bs-accordion($primary)
+    .accordion-button:not(.collapsed)
+        color: mix($primary, black, 65%)
+        background-color: mix($primary, white, 10%)
+
+        &:focus
+            border-color: mix($primary, white, 15%)
+            box-shadow: 0 0 0 0.25rem rgba($primary, 0.25)
+
+    

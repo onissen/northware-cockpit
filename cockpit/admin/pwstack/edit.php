@@ -31,7 +31,7 @@
             $sql->bind_param('ssssi', $username, $name, $hashedPassword, $type, $id);
 
             if ($sql->execute()) {
-                header('Location: index.php?editsaved='.$username);
+                header('Location: index.php?useredited='.$username);
             }
         }
     }
