@@ -63,3 +63,34 @@ function deletePW (uid, username) {
         }
     });
 }
+
+function deleteRole (id) {
+    var question = 'Möchtest du die Rolle mit der ID ';
+    question += id;
+    question += ' wirklich löschen?';
+        swal({
+        icon: "warning",
+        title: "Eintrag löschen",
+        text: question,
+
+        buttons: {
+            cancel: {
+                text: "Abbrechen",
+                visible: true,
+                className: "swal-btn-cancel",
+              },
+              confirm: {
+                text: "Ja, löschen",
+                value: "deleteRole",
+                visible: true,
+                className: "swal-btn-danger",
+              }
+        }
+    }).then((value) => {
+        if (value == 'deleteRole') {
+            document.getElementById('id-delete').value = id;
+            document.getElementById('submit-delete').value = value;
+            document.getElementById('form-delete').submit();
+        }
+    });
+}

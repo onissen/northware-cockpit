@@ -12,25 +12,24 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $stmt = $db_cockpit->prepare("SELECT * FROM users WHERE username = :username");
-        $stmt->bindParam(':username', $username);
-        $stmt->execute();
+        $stmt = $db_pws->query("SELECT pws_users.username, pws_users.password, pws_users.name, pws_userroles.role_nwcockpit, pws_userroles.role_nwfinance, pws_userroles.role_nwhures, pws_userroles.role_nwtrader 
+        FROM pws_users LEFT JOIN pws_userroles ON pws_users.id = pws_userroles.user_id WHERE pws_users.username = '$username'");
 
-        $userExists = $stmt->fetchAll();
+        $userExists = $stmt->fetch_assoc();
 
-        $passwordHashed = $userExists[0]['password'];
-        $checkPassword = password_verify($password, $passwordHashed);
+        $passwordDehashed = openssl_decrypt($userExists['password'], 'AES-128-ECB', SECRETKEY);
 
-        if (!$checkPassword) {
+        if ($password != $passwordDehashed) {
             $Alert = 'Das Passwort ist falsch.';
             $AlertTheme = 'warning';
         } else {
-            $_SESSION['username'] = $userExists[0]['username'];
-            $_SESSION['name'] = $userExists[0]['name'];
-            $_SESSION['rcockpit'] = $userExists[0]['role_cockpit'];
-            $_SESSION['rfinance'] = $userExists[0]['role_finance'];
-            $_SESSION['rhures'] = $userExists[0]['role_hures'];
-            $_SESSION['rtrader'] = $userExists[0]['role_trader'];
+            $_SESSION['username'] = $userExists['username'];
+            $_SESSION['name'] = $userExists['name'];
+
+            $_SESSION['rcockpit'] = $userExists['role_nwcockpit'];
+            $_SESSION['rfinance'] = $userExists['role_nwfinance'];
+            $_SESSION['rhures'] = $userExists['role_nwhures'];
+            $_SESSION['rtrader'] = $userExists['role_nwtrader'];
             header('Location:index.php');
         }
     }

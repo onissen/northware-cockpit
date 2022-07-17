@@ -4,13 +4,8 @@
 
     if (!isset($noredirect) OR $noredirect!= true AND isset($_POST['action'])) {
         if ($_POST['action'] == 'logout') {
-            unset($_SESSION['username']);
-            unset($_SESSION['name']);
-            unset($_SESSION['rcockpit']);
-            unset($_SESSION['rfinance']);
-            unset($_SESSION['rhures']);
-            unset($_SESSION['rtrader']);
-            unset($_SESSION['client']);
+            session_unset();
+            session_destroy();
             header('Location: http://northware-cockpit.test/login.php?logout');
         } 
         elseif (!isset($_SESSION['username'])) {

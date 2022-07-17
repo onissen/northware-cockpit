@@ -1,24 +1,23 @@
-<?php 
-    session_start();
+<?php
+    $service = 'cockpit';
+    $siteTitle = 'PWStack Identitätsprüfung';
+    $no_body = true;
+    $noredirect = true;
+    require "../../../components/header.php";
 
-    if(isset($_SESSION['security_key'])) {
+    if(isset($_SESSION['identity_confirmed'])) {
         if (isset($_GET['lockpws'])) {
-            unset($_SESSION['security_key']);
+            unset($_SESSION['identity_confirmed']);
             $Alert = 'Der PWStack wurde gesperrt. Sie wurden abgemeldet.';
             $AlertTheme = 'success';
         }
         else {header("Location:index.php");}
     }
 
-    $service = 'cockpit';
-    $siteTitle = 'PWStack Identitätsprüfung';
-    include_once "includes/header.php";
-    require_once("includes/config.php");
-
     $sendmail = false;
     function sendCode() {
+        global $mail_itdept;
         $code = mt_rand(111111, 999999);
-        $mail_recipiant = 'it@nissen-group.de';
         $mail_subject = 'Code fuer das PWStack';
         $mail_message = '
         <html>
@@ -26,15 +25,16 @@
             <p>Wir haben am '.date('d.m.Y H:i').' Uhr die Anforderung fuer einen Identifizierungscode fuer das Northware PWStack erhalten.<p>
             <p>Der Identifizierungscode lautet: <b>'.$code.'</b></p>
             <br>
-            <p>Viele Grueße vom Northware PWStack</p>
+            <p>Viele Gruesse vom Northware PWStack</p>
         </body>
         </html>
         ';
         $mail_header[] = 'MIME-Version: 1.0';
+        $mail_header[] = 'From: Northware PWStack <pwstack@northware-cockpit.test>';
         $mail_header[] = 'Content-type: text/html; charset=iso-8859-1';
 
         global $sendmail;
-        $sendmail = mail($mail_recipiant, $mail_subject, $mail_message, implode("\r\n", $mail_header));
+        $sendmail = mail($mail_itdept, $mail_subject, $mail_message, implode("\r\n", $mail_header));
 
         $_SESSION['code'] = $code;
     }
@@ -65,6 +65,14 @@
     
     if (isset($_POST['submit-key'])) {
         checkKey();
+        echo 'Code: '.$_SESSION['code'];
+        echo 'Key: '.$key;
+        print_r($_POST);
+    }
+
+    if (isset($_GET['noaccess'])) {
+        $mailarrived = true;
+        $_SESSION['code'] = $secretcode;
     }
 ?>
 
@@ -82,8 +90,10 @@
                 <form method="post" class="info-mail">
                     <p>Für den Zugang zum PWStack muss deine Identität geprüft werden. Dazu senden wir eine Mail an die IT-Abteilung</p>
                     <button type="submit" class="btn btn-primary w-100 btn-lg" name="submit-code">Alles klar, jetzt Code senden</button>
+                    <a href="?noaccess" class="mt-3 link-btn link-btn-primary">Ich habe keinen Zugriff auf den Code.</a>
                 </form>
             <?php } else { ?>
+                <p>Wir haben einen Identifizierungscode an die IT-Abteilung versendet. Bitte gebe diesen Code hier ein um auf das PWStack zuzugreifen.</p>
                 <form method="post" id="ident-form">
                     <div class="otp-input-fields my-3">
                         <input type="text" name="" id="" class="form-control form-control-lg" maxlength="1">
@@ -93,6 +103,8 @@
                         <input type="text" name="" id="" class="form-control form-control-lg" maxlength="1">
                         <input type="text" name="" id="" class="form-control form-control-lg" maxlength="1">
                     </div>
+
+                    <?php if(isset($_GET['noaccess'])) { ?><a class="link-btn link-btn-primary" href="#" data-bs-toggle="tooltip" title="<?php echo $secrettipp ?>">Gib mir einen Tipp</a><?php } ?>
 
                     <input type="hidden" name="key" id="input-key">
                     <input type="hidden" name="submit-key" id="sub_key">
@@ -104,5 +116,5 @@
 
 
 <?php 
-    include_once "includes/footer.php";
+    include_once "../../../components/footer.php";
 ?>
