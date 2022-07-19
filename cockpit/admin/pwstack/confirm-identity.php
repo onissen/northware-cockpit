@@ -65,9 +65,6 @@
     
     if (isset($_POST['submit-key'])) {
         checkKey();
-        echo 'Code: '.$_SESSION['code'];
-        echo 'Key: '.$key;
-        print_r($_POST);
     }
 
     if (isset($_GET['noaccess'])) {
@@ -88,7 +85,7 @@
 
             <?php if (!isset($mailarrived)) { ?>
                 <form method="post" class="info-mail">
-                    <p>Für den Zugang zum PWStack muss deine Identität geprüft werden. Dazu senden wir eine Mail an die IT-Abteilung</p>
+                    <p>Für den Zugang zum PWStack muss deine Identität geprüft werden. Dazu senden wir einen Code per Mail an die IT-Abteilung</p>
                     <button type="submit" class="btn btn-primary w-100 btn-lg" name="submit-code">Alles klar, jetzt Code senden</button>
                     <a href="?noaccess" class="mt-3 link-btn link-btn-primary">Ich habe keinen Zugriff auf den Code.</a>
                 </form>

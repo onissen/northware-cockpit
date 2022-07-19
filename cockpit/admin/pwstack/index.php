@@ -54,7 +54,7 @@
                 <h2>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item text-primary">PWStack</li>
-                        <li class="breadcrumb-item active">Passwörter </li>
+                        <li class="breadcrumb-item active">Benutzer</li>
                     </ol>
                 </h2>
             </div>
