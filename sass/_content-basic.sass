@@ -17,9 +17,18 @@
     padding: 3rem 0
     border-radius: $border-radius
     background-size: cover
+    font-variation-settings: $wght-sbold
 
-    &.morning, &.afternoon, &.evening
-        background: url(../utilities/bg-landscape.jpg) center center no-repeat
+    &.morning
+        background: url(../utilities/salutation-bg-morning.png) no-repeat
+        color: #4E6883
+    &.day
+        background: url(../utilities/salutation-bg-day.png) no-repeat
+        color: #293042
+    &.night
+        background: url(../utilities/salutation-bg-night.png) no-repeat
+        color: #F7F9FC
+        
 
 .link-btn
     display: inline-block

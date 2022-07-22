@@ -250,9 +250,19 @@ strong, b {
   padding: 3rem 0;
   border-radius: 8px;
   background-size: cover;
+  font-variation-settings: "wght" 600;
 }
-.salutation.morning, .salutation.afternoon, .salutation.evening {
-  background: url(../utilities/bg-landscape.jpg) center center no-repeat;
+.salutation.morning {
+  background: url(../utilities/salutation-bg-morning.png) no-repeat;
+  color: #4E6883;
+}
+.salutation.day {
+  background: url(../utilities/salutation-bg-day.png) no-repeat;
+  color: #293042;
+}
+.salutation.night {
+  background: url(../utilities/salutation-bg-night.png) no-repeat;
+  color: #F7F9FC;
 }
 
 .link-btn {

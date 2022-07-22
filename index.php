@@ -5,8 +5,8 @@
     <div class="salutation shadow-sm
     <?php 
             if (date('H')<= 11) {echo 'morning';}
-            if (date('H')> 11 AND date('H')< 17) {echo 'afternoon';}
-            if (date('H')>= 17) {echo 'evening';}
+            if (date('H')> 11 AND date('H')< 17) {echo 'day';}
+            if (date('H')>= 17) {echo 'night';}
         ?>">
         <h1>
             <?php 
