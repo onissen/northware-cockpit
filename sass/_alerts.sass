@@ -1,0 +1,71 @@
+$btn-close-white: invert(1) grayscale(100%) brightness(200%)
+    
+.alert
+    border: none
+    box-shadow: $box-shadow-sm
+
+.alert-link:hover
+    text-decoration: none
+    
+
+@mixin AlertPrimary($light-theme: false)
+    .alert-primary
+        color: $onprimary
+        background-color: $primary
+        .alert-link
+            color: $onprimary
+
+        @if $light-theme
+            .btn-close
+                filter: invert(1) grayscale(100%) brightness(200%) // Sets .btn-close to White-Mode
+
+.alert-secondary
+    background-color: $secondary
+    color: $black
+    .alert-link
+        color: $black
+
+ 
+.alert-success
+    background-color: $success
+    color: $white
+    .alert-link
+        color: $white
+    .btn-close
+        filter: $btn-close-white
+
+.alert-warning
+    background-color: $warning
+    color: $black
+    .alert-link
+        color: $black
+
+.alert-danger
+    background-color: $danger
+    color: $white
+    .alert-link
+        color: $white
+    .btn-close
+        filter: $btn-close-white
+
+.alert-info
+    background-color: $info
+    color: $white
+    .alert-link
+        color: $white
+    .btn-close
+        filter: $btn-close-white
+
+.alert-light
+    background-color: $light
+    color: $black
+    .alert-link
+        color: $black
+
+.alert-dark
+    background-color: $dark
+    color: $white
+    .alert-link
+        color: $white
+    .btn-close
+        filter: $btn-close-white

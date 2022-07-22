@@ -1,6 +1,6 @@
+@import global-var
 @import cockpit/_variables
 @import bs-theme
-@import global-var
 @import cockpit/dashboard
 @import cockpit/pwstack
 
@@ -19,6 +19,7 @@ body
     @include DarkDropdown ($color: $primary)
     @include H2Breadcrumb ($color: $primary)
     @include Tables ($color: $primary)
+    @include AlertPrimary ($light-theme: true)
 
 table
     @include LinkAlone ($color: $primary)
