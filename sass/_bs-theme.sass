@@ -1,8 +1,8 @@
 @mixin bs-forms($color)
     .form-select, .form-control
         &:focus
-            box-shadow: 0 0 0 .25rem rgba(mix($color, white, 75%), .25)
-            border-color: rgba(mix($color, white, 75%), .50)
+            box-shadow: 0 0 0 .25rem rgba(mix($color, $white, 75%), .25)
+            border-color: rgba(mix($color, $white, 75%), .50)
 
 @mixin bs-btn-primary ($primary, $color)
     .btn-primary
@@ -11,17 +11,17 @@
         border-color: $primary
 
         &:hover, &:focus
-            background-color: mix($primary, black, 80%)
+            background-color: mix($primary, $black, 80%)
             color: $color
-            border-color: mix($primary, black, 80%)
+            border-color: mix($primary, $black, 80%)
 
         &:active
-            background-color: mix($primary, black, 65%)
+            background-color: mix($primary, $black, 65%)
             color: $color
-            border-color: mix($primary, black, 65%)
+            border-color: mix($primary, $black, 65%)
         
         &:focus
-            box-shadow: 0 0 0 0.25rem rgba(mix($primary, white, 50%), .5)
+            box-shadow: 0 0 0 0.25rem rgba(mix($primary, $white, 50%), .5)
 
 @mixin bs-btn-outline-primary($primary, $color)
     .btn-outline-primary
@@ -42,11 +42,11 @@
 
 @mixin bs-accordion($primary)
     .accordion-button:not(.collapsed)
-        color: mix($primary, black, 65%)
-        background-color: mix($primary, white, 10%)
+        color: mix($primary, $black, 65%)
+        background-color: mix($primary, $white, 10%)
 
         &:focus
-            border-color: mix($primary, white, 15%)
+            border-color: mix($primary, $white, 15%)
             box-shadow: 0 0 0 0.25rem rgba($primary, 0.25)
 
     

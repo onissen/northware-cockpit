@@ -3,13 +3,13 @@
 
 .navbar-dark
     .nav-link
-        color: rgba(255, 255, 255, 0.75)
+        color: rgba($white, 0.75)
 
         &:hover, &:focus
-            color: rgba(255, 255, 255, 0.9)
+            color: rgba($white, 0.9)
 
 .right-nav
-    color: white
+    color: $white
 
 .dropdown-align-right[data-bs-popper]
     left: auto
@@ -28,21 +28,21 @@
 .dropdown-menu-dark
     button, a
         &:hover, &:active, &:focus
-            background-color: rgba(white, 0.15)
+            background-color: rgba($white, 0.15)
 
 
 // App Box
 
 #appbox-toggle
-    color: rgba(white, .55)
+    color: rgba($white, .55)
     margin-right: 1rem
     padding: 8px
 
     &:hover
-        color: rgba(white, .75)
+        color: rgba($white, .75)
     
     &:active
-        color: white
+        color: $white
 
     &::after
         content: none

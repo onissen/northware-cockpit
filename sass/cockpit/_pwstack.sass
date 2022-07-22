@@ -6,7 +6,7 @@
     border-radius: $border-radius
 
     &:hover, &:active
-        background-color: mix($primary, white, 10%)
+        background-color: mix($primary, $white, 10%)
         box-shadow: $box-shadow-sm
 
     .role-icon
@@ -54,23 +54,23 @@
 
 .badge
     &.text-bg-cockpit
-        color: white !important
+        color: $white !important
         background-color: #0079D5 !important   
     &.text-bg-finance
-        color: white !important
+        color: $white !important
         background-color: #83060B !important
     &.text-bg-hures
-        color: white !important
+        color: $white !important
         background-color: #03860F !important
     &.text-bg-trader
-        color: black !important
+        color: $black !important
         background-color: #f8a711 !important
     &.text-bg-companydata
-        color: white !important
+        color: $white !important
         background-color: #007388 !important
     &.text-bg-intranet
         color: #f49900 !important
-        background-color: black !important
+        background-color: $black !important
 
 #headingNewRole, #headingExistingRoles
     .accordion-button
@@ -84,7 +84,7 @@
 
     *.form-text
         margin-left: 1em
-        color: rgba(black, 0.5)
+        color: rgba($black, 0.5)
 
 .row-labels, .row-inputs input
     width: 48%
@@ -95,7 +95,7 @@
         border-color: #32373c
 
         &:hover, &:focus, &:active
-            color: white
+            color: $white
             background-color: #32373c
             border-color: #32373c
         

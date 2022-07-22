@@ -33,33 +33,33 @@ strong, b {
 
 .bg-finance {
   background-color: #83060B;
-  color: white;
+  color: #f7f9fc;
 }
 
 body .btn-primary {
   background-color: #83060B;
-  color: white;
+  color: #f7f9fc;
   border-color: #83060B;
 }
 body .btn-primary:hover, body .btn-primary:focus {
-  background-color: #690509;
-  color: white;
-  border-color: #690509;
+  background-color: #710e16;
+  color: #f7f9fc;
+  border-color: #710e16;
 }
 body .btn-primary:active {
-  background-color: #550407;
-  color: white;
-  border-color: #550407;
+  background-color: #64151e;
+  color: #f7f9fc;
+  border-color: #64151e;
 }
 body .btn-primary:focus {
-  box-shadow: 0 0 0 0.25rem rgba(193, 131, 133, 0.5);
+  box-shadow: 0 0 0 0.25rem rgba(189, 128, 132, 0.5);
 }
 body .btn-outline-primary {
   color: #83060B;
   border-color: #83060B;
 }
 body .btn-outline-primary:hover, body .btn-outline-primary:focus, body .btn-outline-primary:active {
-  color: white;
+  color: #f7f9fc;
   background-color: #83060B;
   border-color: #83060B;
 }
@@ -67,18 +67,18 @@ body .btn-outline-primary:focus {
   box-shadow: 0 0 0 0.25rem rgba(131, 6, 11, 0.5);
 }
 body .form-select:focus, body .form-control:focus {
-  box-shadow: 0 0 0 0.25rem rgba(162, 68, 72, 0.25);
-  border-color: rgba(162, 68, 72, 0.5);
+  box-shadow: 0 0 0 0.25rem rgba(160, 67, 71, 0.25);
+  border-color: rgba(160, 67, 71, 0.5);
 }
 body .link-btn-primary {
   color: #83060B;
 }
 body .link-btn-primary:hover {
-  background-color: #f3e6e7;
-  color: #690509;
+  background-color: #ebe1e4;
+  color: #710e16;
 }
 body .link-btn-primary:active, body .link-btn-primary.active {
-  background-color: #f3e6e7;
+  background-color: #ebe1e4;
   color: #83060B;
   border: 1px solid #83060B;
   font-variation-settings: "wght" 600;
@@ -87,15 +87,15 @@ body .link-btn-secondary {
   color: #5D656C;
 }
 body .link-btn-secondary:hover {
-  background-color: #eff0f0;
-  color: #4a5156;
+  background-color: #e8eaee;
+  color: #535a64;
 }
 body .link-btn-danger {
   color: #DC3545;
 }
 body .link-btn-danger:hover {
-  background-color: #fcebec;
-  color: #b02a37;
+  background-color: #f4e5ea;
+  color: #b83444;
 }
 body .dropdown-menu-dark {
   background-color: #83060B;
@@ -104,11 +104,11 @@ body h2 .breadcrumb li a {
   color: #83060B;
 }
 body h2 .breadcrumb li a:hover {
-  color: #690509;
+  color: #710e16;
 }
 body .table thead {
   color: #83060B;
-  background-color: #f3e6e7;
+  background-color: #ebe1e4;
 }
 
 table a {
@@ -116,7 +116,7 @@ table a {
   color: #83060B;
 }
 table a:hover {
-  color: #690509;
+  color: #710e16;
   text-decoration: underline;
 }
 
