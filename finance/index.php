@@ -49,7 +49,7 @@
                     Es tut uns leid, aber dein Benutzer (<?php echo $_SESSION['username'] ?>) hat keinen Zugriff auf Northware Financials. 
                     Bitte wende dich an die IT-Abteilung oder die Buchhaltung, um Zugriff zu erhalten.
                 </p>
-                <a href="../" class="link-btn link-btn-secondary mt-3">Zurück zum Cockpit</a></div>
+                <a href="../" class="link-btn link-btn-dark mt-3">Zurück zum Cockpit</a></div>
             <?php } ?>
         </div>
     </main>

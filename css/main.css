@@ -257,31 +257,6 @@ strong, b {
   color: #f7f9fc;
 }
 
-.link-btn {
-  display: inline-block;
-  min-width: 6rem;
-  text-decoration: none;
-  padding: 0.7rem;
-  border-radius: 0.375rem;
-  border: 1px solid transparent;
-}
-.link-btn:hover {
-  box-shadow: 0 0.125rem 0.25rem rgba(41, 48, 66, 0.075);
-  transition: border-color 0.167s linear, box-shadow 0.167s linear;
-}
-
-.link-btn-sm {
-  display: inline-block;
-  text-decoration: none;
-  padding: 0.2rem;
-  border-radius: 0.375rem;
-  border: 1px solid transparent;
-}
-.link-btn-sm:hover {
-  box-shadow: 0 0.125rem 0.25rem rgba(41, 48, 66, 0.075);
-  transition: border-color 0.167s linear, box-shadow 0.167s linear;
-}
-
 h2 .breadcrumb li, h2 .breadcrumb li.active {
   color: #293042;
 }
