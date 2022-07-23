@@ -532,6 +532,9 @@ body .btn-outline-primary:hover, body .btn-outline-primary:focus, body .btn-outl
 body .btn-outline-primary:focus {
   box-shadow: 0 0 0 0.25rem rgba(131, 6, 11, 0.5);
 }
+body .form-select, body .form-control {
+  background-color: #f7f9fc;
+}
 body .form-select:focus, body .form-control:focus {
   box-shadow: 0 0 0 0.25rem rgba(160, 67, 71, 0.25);
   border-color: rgba(160, 67, 71, 0.5);
