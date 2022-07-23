@@ -218,14 +218,17 @@ strong, b {
 .salutation.morning {
   background: url(../utilities/salutation-bg-morning.png) no-repeat;
   color: #293042;
+  background-color: #D33297;
 }
 .salutation.day {
   background: url(../utilities/salutation-bg-day.png) no-repeat;
   color: #293042;
+  background-color: #01A7AE;
 }
 .salutation.night {
   background: url(../utilities/salutation-bg-night.png) no-repeat;
   color: #f4f9fd;
+  background-color: #422A99;
 }
 
 h2 .breadcrumb li, h2 .breadcrumb li.active {
