@@ -28,48 +28,19 @@ strong, b {
   font-size: 2.5rem;
 }
 
-@font-face {
-  font-family: "Nunito";
-  src: url("./../utilities/fonts/nunito.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Nunito Italic";
-  src: url("./../utilities/fonts/nunito-italic.ttf") format("truetype");
-}
-body {
-  font-family: "Nunito", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-variation-settings: "wght" 400;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-variation-settings: "wght" 500;
-}
-
-button, input, optgroup, select, textarea, option {
-  font-family: "Nunito", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-strong, b {
-  font-variation-settings: "wght" 700;
-}
-
-.icon-big {
-  font-size: 2.5rem;
-}
-
 .navbar-brand {
   font-variation-settings: "wght" 600;
 }
 
 .navbar-dark .nav-link {
-  color: rgba(247, 249, 252, 0.75);
+  color: rgba(232, 243, 251, 0.75);
 }
 .navbar-dark .nav-link:hover, .navbar-dark .nav-link:focus {
-  color: rgba(247, 249, 252, 0.9);
+  color: rgba(232, 243, 251, 0.9);
 }
 
 .right-nav {
-  color: #f7f9fc;
+  color: #e8f3fb;
 }
 
 .dropdown-align-right[data-bs-popper] {
@@ -91,19 +62,19 @@ strong, b {
 }
 
 .dropdown-menu-dark button:hover, .dropdown-menu-dark button:active, .dropdown-menu-dark button:focus, .dropdown-menu-dark a:hover, .dropdown-menu-dark a:active, .dropdown-menu-dark a:focus {
-  background-color: rgba(247, 249, 252, 0.15);
+  background-color: rgba(232, 243, 251, 0.15);
 }
 
 #appbox-toggle {
-  color: rgba(247, 249, 252, 0.55);
+  color: rgba(232, 243, 251, 0.55);
   margin-right: 1rem;
   padding: 8px;
 }
 #appbox-toggle:hover {
-  color: rgba(247, 249, 252, 0.75);
+  color: rgba(232, 243, 251, 0.75);
 }
 #appbox-toggle:active {
-  color: #f7f9fc;
+  color: #e8f3fb;
 }
 #appbox-toggle::after {
   content: none;
@@ -141,7 +112,7 @@ strong, b {
 
 .tile-cockpit {
   background-color: #0079D5;
-  color: #f7f9fc;
+  color: #e8f3fb;
 }
 .tile-cockpit:hover {
   border: 1px solid #0275ce;
@@ -149,7 +120,7 @@ strong, b {
 
 .tile-finance {
   background-color: #83060B;
-  color: #f7f9fc;
+  color: #e8f3fb;
 }
 .tile-finance:hover {
   border: 1px solid #7f080e;
@@ -157,7 +128,7 @@ strong, b {
 
 .tile-hures {
   background-color: #03860F;
-  color: #f7f9fc;
+  color: #e8f3fb;
 }
 .tile-hures:hover {
   border: 1px solid #058212;
@@ -203,12 +174,12 @@ strong, b {
   padding: 1rem;
 }
 .login-body .login-main .login-box {
-  background-color: #f7f9fc;
+  background-color: #e8f3fb;
   border-radius: 8px;
   padding: 3rem;
 }
 .login-body .login-main .userconfirmation-box {
-  background-color: #f7f9fc;
+  background-color: #e8f3fb;
   border-radius: 8px;
   padding: 0.5rem;
   text-align: center;
@@ -254,7 +225,7 @@ strong, b {
 }
 .salutation.night {
   background: url(../utilities/salutation-bg-night.png) no-repeat;
-  color: #f7f9fc;
+  color: #e8f3fb;
 }
 
 h2 .breadcrumb li, h2 .breadcrumb li.active {
@@ -282,7 +253,7 @@ h2 .breadcrumb li a, h2 .breadcrumb li.active a {
 
 body {
   margin: 0;
-  background-color: #f7f9fc;
+  background-color: #e8f3fb;
   color: #293042;
 }
 
