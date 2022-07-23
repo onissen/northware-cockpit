@@ -33,14 +33,14 @@ strong, b {
 }
 
 .navbar-dark .nav-link {
-  color: rgba(232, 243, 251, 0.75);
+  color: rgba(244, 249, 253, 0.75);
 }
 .navbar-dark .nav-link:hover, .navbar-dark .nav-link:focus {
-  color: rgba(232, 243, 251, 0.9);
+  color: rgba(244, 249, 253, 0.9);
 }
 
 .right-nav {
-  color: #e8f3fb;
+  color: #f4f9fd;
 }
 
 .dropdown-align-right[data-bs-popper] {
@@ -62,19 +62,19 @@ strong, b {
 }
 
 .dropdown-menu-dark button:hover, .dropdown-menu-dark button:active, .dropdown-menu-dark button:focus, .dropdown-menu-dark a:hover, .dropdown-menu-dark a:active, .dropdown-menu-dark a:focus {
-  background-color: rgba(232, 243, 251, 0.15);
+  background-color: rgba(244, 249, 253, 0.15);
 }
 
 #appbox-toggle {
-  color: rgba(232, 243, 251, 0.55);
+  color: rgba(244, 249, 253, 0.55);
   margin-right: 1rem;
   padding: 8px;
 }
 #appbox-toggle:hover {
-  color: rgba(232, 243, 251, 0.75);
+  color: rgba(244, 249, 253, 0.75);
 }
 #appbox-toggle:active {
-  color: #e8f3fb;
+  color: #f4f9fd;
 }
 #appbox-toggle::after {
   content: none;
@@ -112,7 +112,7 @@ strong, b {
 
 .tile-cockpit {
   background-color: #0079D5;
-  color: #e8f3fb;
+  color: #f4f9fd;
 }
 .tile-cockpit:hover {
   border: 1px solid #0275ce;
@@ -120,7 +120,7 @@ strong, b {
 
 .tile-finance {
   background-color: #83060B;
-  color: #e8f3fb;
+  color: #f4f9fd;
 }
 .tile-finance:hover {
   border: 1px solid #7f080e;
@@ -128,7 +128,7 @@ strong, b {
 
 .tile-hures {
   background-color: #03860F;
-  color: #e8f3fb;
+  color: #f4f9fd;
 }
 .tile-hures:hover {
   border: 1px solid #058212;
@@ -174,12 +174,12 @@ strong, b {
   padding: 1rem;
 }
 .login-body .login-main .login-box {
-  background-color: #e8f3fb;
+  background-color: #f4f9fd;
   border-radius: 8px;
   padding: 3rem;
 }
 .login-body .login-main .userconfirmation-box {
-  background-color: #e8f3fb;
+  background-color: #f4f9fd;
   border-radius: 8px;
   padding: 0.5rem;
   text-align: center;
@@ -225,7 +225,7 @@ strong, b {
 }
 .salutation.night {
   background: url(../utilities/salutation-bg-night.png) no-repeat;
-  color: #e8f3fb;
+  color: #f4f9fd;
 }
 
 h2 .breadcrumb li, h2 .breadcrumb li.active {
@@ -253,7 +253,7 @@ h2 .breadcrumb li a, h2 .breadcrumb li.active a {
 
 body {
   margin: 0;
-  background-color: #e8f3fb;
+  background-color: #f4f9fd;
   color: #293042;
 }
 
