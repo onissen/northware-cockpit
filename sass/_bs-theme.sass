@@ -1,52 +1,134 @@
+/*** Colors ***/
+$secondary: #e2e3e5
+$success: #46b450
+$warning: #ffb900
+$danger: #dc3232
+$info: #00B7C3
+$light: #f7f9fc
+$dark: #293042
+/****************/
+    
+@import buttons
+@import alerts
+
+
 @mixin bs-forms($color)
     .form-select, .form-control
+        background-color: $white
         &:focus
-            box-shadow: 0 0 0 .25rem rgba(mix($color, white, 75%), .25)
-            border-color: rgba(mix($color, white, 75%), .50)
+            box-shadow: 0 0 0 .25rem rgba(mix($color, $white, 75%), .25)
+            border-color: rgba(mix($color, $white, 75%), .50)
 
-@mixin bs-btn-primary ($primary, $color)
-    .btn-primary
-        background-color: $primary
-        color: $color
-        border-color: $primary
+@mixin bs-accordion($primary)
+    .accordion-button:not(.collapsed)
+        color: mix($primary, $black, 65%)
+        background-color: mix($primary, $white, 10%)
 
-        &:hover, &:focus
-            background-color: mix($primary, black, 80%)
-            color: $color
-            border-color: mix($primary, black, 80%)
-
-        &:active
-            background-color: mix($primary, black, 65%)
-            color: $color
-            border-color: mix($primary, black, 65%)
-        
         &:focus
-            box-shadow: 0 0 0 0.25rem rgba(mix($primary, white, 50%), .5)
+            border-color: mix($primary, $white, 15%)
+            box-shadow: 0 0 0 0.25rem rgba($primary, 0.25)
 
-@mixin bs-btn-outline-primary($primary, $color)
-    .btn-outline-primary
-        color: $primary
-        border-color: $primary
 
-        &:hover, &:focus, &:active
-            color: $color
-            background-color: $primary
-            border-color: $primary
-        
-        &:focus
-            box-shadow: 0 0 0 0.25rem rgba($primary, .5)
+/*********** Color-Suffix-Classes *********/
+
+.text-bg-primary
+    background-color: $primary !important
+    color: $onprimary !important
+
+
+.text-bg-secondary
+    background-color: $secondary !important
+    color: $black !important
+
+.text-bg-success
+    background-color: $success !important
+    color: $light !important
+
+.text-bg-warning
+    background-color: $warning !important
+    color: $black !important
+
+.text-bg-danger
+    background-color: $danger !important
+    color: $light !important
+
+.text-bg-info
+    background-color: $info !important
+    color: $light !important
+
+.text-bg-light
+    background-color: $light !important
+    color: $black !important
+
+.text-bg-dark
+    background-color: $dark !important
+    color: $light !important
 
 .text-primary
     color: $primary !important
 
+.text-secondary
+    color: $secondary !important
+.text-success
+    color: $success !important
+.text-warning
+    color: $warning !important
+.text-danger
+    color: $danger !important
+.text-info
+    color: $info !important
+.text-light
+    color: $light !important
+.text-dark
+    color: $dark !important
 
-@mixin bs-accordion($primary)
-    .accordion-button:not(.collapsed)
-        color: mix($primary, black, 65%)
-        background-color: mix($primary, white, 10%)
+.link-secondary
+    color: $secondary !important
+.link-success
+    color: $success !important
+.link-warning
+    color: $warning !important
+.link-danger
+    color: $danger !important
+.link-info
+    color: $info !important
+.link-light
+    color: $light !important
+.link-dark
+    color: $dark !important
 
-        &:focus
-            border-color: mix($primary, white, 15%)
-            box-shadow: 0 0 0 0.25rem rgba($primary, 0.25)
 
-    
+.bg-primary
+    background-color: $primary !important
+.bg-secondary
+    background-color: $secondary !important
+.bg-success
+    background-color: $success !important
+.bg-warning
+    background-color: $warning !important
+.bg-danger
+    background-color: $danger !important
+.bg-info
+    background-color: $info !important
+.bg-light
+    background-color: $light !important
+.bg-dark
+    background-color: $dark !important
+
+
+.border-primary
+    border-color: $primary !important
+.border-secondary
+    border-color: $secondary !important
+.border-success
+    border-color: $success !important
+.border-warning
+    border-color: $warning !important
+.border-danger
+    border-color: $danger !important
+.border-info
+    border-color: $info !important
+.border-light
+    border-color: $light !important
+.border-dark
+    border-color: $dark !important

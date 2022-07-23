@@ -1,24 +1,26 @@
+@import global-var
 @import cockpit/_variables
 @import bs-theme
-@import global-var
 @import cockpit/dashboard
 @import cockpit/pwstack
+@import cockpit/error-pages
 
 
 .bg-cockpit
     background-color: $primary
-    color: white
+    color: $white
 
 
 body
-    @include bs-btn-primary ($primary: $primary, $color: white)
-    @include bs-btn-outline-primary ($primary: $primary, $color: white)
+    @include bs-btn-primary ($primary: $primary, $color: $white)
+    @include bs-btn-outline-primary ($primary: $primary, $color: $white)
     @include bs-forms ($color: $primary)
     @include bs-accordion($primary: $primary)
-    @include LinkBtn($color: $primary)
+    // @include LinkBtn($color: $primary)
     @include DarkDropdown ($color: $primary)
     @include H2Breadcrumb ($color: $primary)
     @include Tables ($color: $primary)
+    @include AlertPrimary ($light-theme: true)
 
 table
     @include LinkAlone ($color: $primary)

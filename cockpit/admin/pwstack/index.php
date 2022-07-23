@@ -103,7 +103,7 @@
                             <?php if (isset($item['role_nwtrader']) AND $item['role_nwtrader'] != '') {?> <span class="badge text-bg-trader">Northware Trader</span><?php } ?>
                             <?php if (isset($item['role_companydata']) AND $item['role_companydata'] != '') {?> <span class="badge text-bg-companydata">Company Data</span><?php } ?>
                             <?php if (isset($item['role_intranet']) AND $item['role_intranet'] != '') {?> <span class="badge text-bg-intranet">Intranet</span><?php } ?>
-                            <a href="roles.php?edit_user=<?php echo $item['username'] ?>" class="btn btn-outline-secondary btn-sm"><i class="fa-solid fa-address-card"></i> Rollen verwalten</a>
+                            <a href="roles.php?edit_user=<?php echo $item['username'] ?>" class="btn btn-outline-dark btn-sm"><i class="fa-solid fa-address-card"></i> Rollen verwalten</a>
                         </div>
                         <div class="col-1">
                             <a class="link-btn-sm link-btn-danger cursor-pointer" onclick="deletePW(<?php echo $item['id'] ?>, '<?php echo $item['username'] ?>')"><i class="fa-solid fa-trash-can"></i></a>

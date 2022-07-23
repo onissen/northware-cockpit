@@ -1,12 +1,14 @@
 @import fonts
 
-$box-shadow:       0 .5rem 1rem rgba(black, .15)
-$box-shadow-sm:    0 .125rem .25rem rgba(black, .075)
-$box-shadow-lg:    0 1rem 3rem rgba(black, .175)
-$box-shadow-inset: inset 0 1px 2px rgba(black, .075)
+$black: #293042 // R41, G48, B66 
+$white: #f7f9fc // R247, G249, B252
 
-$secondary: #5D656C
-$danger: #DC3545
+
+$box-shadow:       0 .5rem 1rem rgba($black, .15)
+$box-shadow-sm:    0 .125rem .25rem rgba($black, .075)
+$box-shadow-lg:    0 1rem 3rem rgba($black, .175)
+$box-shadow-inset: inset 0 1px 2px rgba($black, .075)
+
 
 $border-radius: 8px
 
@@ -15,37 +17,10 @@ $finance-prm: #83060B
 $hures-prm: #03860F
 $trader-prm: #f8a711
 
+
 @mixin DarkDropdown($color)
     .dropdown-menu-dark
         background-color: $color
-
-@mixin LinkBtn($color)
-    .link-btn-primary
-        color: $color
-
-        &:hover
-            background-color: mix($color, white, 10%)
-            color: mix($color, black, 80%)
-        
-        &:active, &.active
-            background-color: mix($color, white, 10%)
-            color: $color
-            border: 1px solid $color
-            font-variation-settings: $wght-sbold
-
-    .link-btn-secondary
-        color: $secondary
-
-        &:hover
-            background-color: mix($secondary, white, 10%)
-            color: mix($secondary, black, 80%)
-
-    .link-btn-danger
-        color: $danger
-
-        &:hover
-            background-color: mix($danger, white, 10%)
-            color: mix($danger, black, 80%)
 
 @mixin LinkAlone($color)
     a
@@ -53,7 +28,7 @@ $trader-prm: #f8a711
         color: $color
 
         &:hover
-            color: mix($color, black, 80%)
+            color: mix($color, $black, 80%)
             text-decoration: underline
 
 @mixin H2Breadcrumb ($color)
@@ -61,10 +36,10 @@ $trader-prm: #f8a711
         color: $color
 
         &:hover
-            color: mix(black, $color, 20%)
+            color: mix($black, $color, 20%)
 
 @mixin Tables($color)
     .table
         thead
             color: $color
-            background-color: mix($color, white, 10%)
+            background-color: mix($color, $white, 10%)

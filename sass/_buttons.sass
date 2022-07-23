@@ -1,0 +1,326 @@
+/********* Buttons **************/
+@mixin bs-btn-primary ($primary, $color)
+    .btn-primary
+        background-color: $primary
+        color: $color
+        border-color: $primary
+
+        &:hover, &:focus
+            background-color: mix($primary, $black, 80%)
+            color: $color
+            border-color: mix($primary, $black, 80%)
+
+        &:active
+            background-color: mix($primary, $black, 65%)
+            color: $color
+            border-color: mix($primary, $black, 65%)
+        
+        &:focus
+            box-shadow: 0 0 0 0.25rem rgba(mix($primary, $white, 50%), .5)
+
+.btn-secondary
+    background-color: $secondary
+    color: $black
+    border-color: $secondary
+
+    &:hover, &:focus
+        background-color: mix($secondary, $black, 80%)
+        color: $black
+        border-color: mix($secondary, $black, 80%)
+
+    &:active
+        background-color: mix($secondary, $black, 65%)
+        color: $black
+        border-color: mix($secondary, $black, 65%)
+
+    &:focus
+        box-shadow: 0 0 0 0.25rem rgba(mix($secondary, $white, 50%), .5)
+
+.btn-success
+    background-color: $success
+    color: $white
+    border-color: $success
+
+    &:hover, &:focus
+        background-color: mix($success, $black, 80%)
+        color: $white
+        border-color: mix($success, $black, 80%)
+
+    &:active
+        background-color: mix($success, $black, 65%)
+        color: $white
+        border-color: mix($success, $black, 65%)
+
+    &:focus
+        box-shadow: 0 0 0 0.25rem rgba(mix($success, $white, 50%), .5)
+
+.btn-danger
+    background-color: $danger
+    color: $white
+    border-color: $danger
+
+    &:hover, &:focus
+        background-color: mix($danger, $black, 80%)
+        color: $white
+        border-color: mix($danger, $black, 80%)
+
+    &:active
+        background-color: mix($danger, $black, 65%)
+        color: $white
+        border-color: mix($danger, $black, 65%)
+
+    &:focus
+        box-shadow: 0 0 0 0.25rem rgba(mix($danger, $white, 50%), .5)
+
+.btn-warning
+    background-color: $warning
+    color: $black
+    border-color: $warning
+
+    &:hover, &:focus
+        background-color: mix($warning, $black, 80%)
+        color: $black
+        border-color: mix($warning, $black, 80%)
+
+    &:active
+        background-color: mix($warning, $black, 65%)
+        color: $black
+        border-color: mix($warning, $black, 65%)
+
+    &:focus
+        box-shadow: 0 0 0 0.25rem rgba(mix($warning, $white, 50%), .5)
+
+.btn-info
+    background-color: $info
+    color: $white
+    border-color: $info
+
+    &:hover, &:focus
+        background-color: mix($info, $black, 80%)
+        color: $white
+        border-color: mix($info, $black, 80%)
+
+    &:active
+        background-color: mix($info, $black, 65%)
+        color: $white
+        border-color: mix($info, $black, 65%)
+
+    &:focus
+        box-shadow: 0 0 0 0.25rem rgba(mix($info, $white, 50%), .5)
+
+.btn-light
+    background-color: $light
+    color: $black
+    border-color: $light
+
+    &:hover, &:focus
+        background-color: mix($light, $black, 80%)
+        color: $black
+        border-color: mix($light, $black, 80%)
+
+    &:active
+        background-color: mix($light, $black, 65%)
+        color: $black
+        border-color: mix($light, $black, 65%)
+
+    &:focus
+        box-shadow: 0 0 0 0.25rem rgba(mix($light, $white, 50%), .5)
+
+.btn-dark
+    background-color: $dark
+    color: $white
+    border-color: $dark
+
+    &:hover, &:focus
+        background-color: mix($dark, $black, 80%)
+        color: $white
+        border-color: mix($dark, $black, 80%)
+
+    &:active
+        background-color: mix($dark, $black, 65%)
+        color: $white
+        border-color: mix($dark, $black, 65%)
+
+    &:focus
+        box-shadow: 0 0 0 0.25rem rgba(mix($dark, $white, 50%), .5)
+
+/******* Buttons Outline *****************/
+
+@mixin bs-btn-outline-primary($primary, $color)
+    .btn-outline-primary
+        color: $primary
+        border-color: $primary
+
+        &:hover, &:focus, &:active
+            color: $color
+            background-color: $primary
+            border-color: $primary
+        
+        &:focus
+            box-shadow: 0 0 0 0.25rem rgba($primary, .5)
+
+.btn-outline-secondary
+    color: $secondary
+    border-color: $secondary
+
+    &:hover, &:focus, &:active
+        color: $black
+        background-color: $secondary
+        border-color: $secondary
+
+    &:focus
+        box-shadow: 0 0 0 0.25rem rgba($secondary, .5)
+
+.btn-outline-success
+    color: $success
+    border-color: $success
+
+    &:hover, &:focus, &:active
+        color: $white
+        background-color: $success
+        border-color: $success
+
+    &:focus
+        box-shadow: 0 0 0 0.25rem rgba($success, .5)
+
+.btn-outline-warning
+    color: $warning
+    border-color: $warning
+
+    &:hover, &:focus, &:active
+        color: $black
+        background-color: $warning
+        border-color: $warning
+
+    &:focus
+        box-shadow: 0 0 0 0.25rem rgba($warning, .5)
+
+.btn-outline-danger
+    color: $danger
+    border-color: $danger
+
+    &:hover, &:focus, &:active
+        color: $white
+        background-color: $danger
+        border-color: $danger
+
+    &:focus
+        box-shadow: 0 0 0 0.25rem rgba($danger, .5)
+
+.btn-outline-info
+    color: $info
+    border-color: $info
+
+    &:hover, &:focus, &:active
+        color: $white
+        background-color: $info
+        border-color: $info
+
+    &:focus
+        box-shadow: 0 0 0 0.25rem rgba($info, .5)
+
+.btn-outline-light
+    color: $light
+    border-color: $light
+
+    &:hover, &:focus, &:active
+        color: $black
+        background-color: $light
+        border-color: $light
+
+    &:focus
+        box-shadow: 0 0 0 0.25rem rgba($light, .5)
+
+.btn-outline-dark
+    color: $dark
+    border-color: $dark
+
+    &:hover, &:focus, &:active
+        color: $white
+        background-color: $dark
+        border-color: $dark
+
+    &:focus
+        box-shadow: 0 0 0 0.25rem rgba($dark, .5)
+
+/******** Link Buttons ************************/
+.link-btn
+    display: inline-block
+    min-width: 6rem
+    text-decoration: none
+    padding: 0.7rem
+    border-radius: 0.375rem
+    border: 1px solid transparent
+
+    &:hover
+            box-shadow: $box-shadow-sm
+            transition: border-color .167s linear,box-shadow .167s linear
+
+.link-btn-sm
+    display: inline-block
+    text-decoration: none
+    padding: 0.2rem
+    border-radius: 0.375rem
+    border: 1px solid transparent
+
+    &:hover
+        box-shadow: $box-shadow-sm
+        transition: border-color .167s linear,box-shadow .167s linear
+
+
+.link-btn-primary
+    color: $onprimary
+
+    &:hover
+        background-color: mix($onprimary, $white, 10%)
+        color: mix($onprimary, $black, 80%)
+
+.link-btn-secondary
+    color: $secondary
+
+    &:hover
+        background-color: mix($secondary, $white, 10%)
+        color: mix($secondary, $black, 80%)
+
+.link-btn-success
+    color: $success
+
+    &:hover
+        background-color: mix($success, $white, 10%)
+        color: mix($success, $black, 80%)
+
+.link-btn-warning
+    color: $warning
+
+    &:hover
+        background-color: mix($warning, $white, 10%)
+        color: mix($warning, $black, 80%)
+
+.link-btn-danger
+    color: $danger
+
+    &:hover
+        background-color: mix($danger, $white, 10%)
+        color: mix($danger, $black, 80%)
+
+.link-btn-info
+    color: $info
+
+    &:hover
+        background-color: mix($info, $white, 10%)
+        color: mix($info, $black, 80%)
+
+
+.link-btn-light
+    color: $light
+
+    &:hover
+        background-color: mix($light, $white, 10%)
+        color: mix($light, $black, 80%)
+
+.link-btn-dark
+    color: $dark
+
+    &:hover
+        background-color: mix($dark, $white, 10%)
+        color: mix($dark, $black, 80%)

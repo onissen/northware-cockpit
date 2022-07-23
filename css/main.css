@@ -1,12 +1,4 @@
 @charset "UTF-8";
-body {
-  margin: 0;
-}
-
-html {
-  height: 100%;
-}
-
 @font-face {
   font-family: "Nunito";
   src: url("./../utilities/fonts/nunito.ttf") format("truetype");
@@ -70,14 +62,14 @@ strong, b {
 }
 
 .navbar-dark .nav-link {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(247, 249, 252, 0.75);
 }
 .navbar-dark .nav-link:hover, .navbar-dark .nav-link:focus {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(247, 249, 252, 0.9);
 }
 
 .right-nav {
-  color: white;
+  color: #f7f9fc;
 }
 
 .dropdown-align-right[data-bs-popper] {
@@ -95,23 +87,23 @@ strong, b {
 }
 
 .dropdown-menu {
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  box-shadow: 0 0.125rem 0.25rem rgba(41, 48, 66, 0.075);
 }
 
 .dropdown-menu-dark button:hover, .dropdown-menu-dark button:active, .dropdown-menu-dark button:focus, .dropdown-menu-dark a:hover, .dropdown-menu-dark a:active, .dropdown-menu-dark a:focus {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(247, 249, 252, 0.15);
 }
 
 #appbox-toggle {
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(247, 249, 252, 0.55);
   margin-right: 1rem;
   padding: 8px;
 }
 #appbox-toggle:hover {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(247, 249, 252, 0.75);
 }
 #appbox-toggle:active {
-  color: white;
+  color: #f7f9fc;
 }
 #appbox-toggle::after {
   content: none;
@@ -136,7 +128,7 @@ strong, b {
   border: 1px solid transparent;
 }
 .app-tile:hover {
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.5rem 1rem rgba(41, 48, 66, 0.15);
   transition: border-color 0.167s linear, box-shadow 0.167s linear;
   border: 1px solid;
 }
@@ -149,34 +141,34 @@ strong, b {
 
 .tile-cockpit {
   background-color: #0079D5;
-  color: white;
+  color: #f7f9fc;
 }
 .tile-cockpit:hover {
-  border: 1px solid #0073ca;
+  border: 1px solid #0275ce;
 }
 
 .tile-finance {
   background-color: #83060B;
-  color: white;
+  color: #f7f9fc;
 }
 .tile-finance:hover {
-  border: 1px solid #7c060a;
+  border: 1px solid #7f080e;
 }
 
 .tile-hures {
   background-color: #03860F;
-  color: white;
+  color: #f7f9fc;
 }
 .tile-hures:hover {
-  border: 1px solid #037f0e;
+  border: 1px solid #058212;
 }
 
 .tile-trader {
   background-color: #f8a711;
-  color: black;
+  color: #293042;
 }
 .tile-trader:hover {
-  border: 1px solid #ec9f10;
+  border: 1px solid #eea113;
 }
 
 .sidebar {
@@ -211,12 +203,12 @@ strong, b {
   padding: 1rem;
 }
 .login-body .login-main .login-box {
-  background-color: white;
+  background-color: #f7f9fc;
   border-radius: 8px;
   padding: 3rem;
 }
 .login-body .login-main .userconfirmation-box {
-  background-color: white;
+  background-color: #f7f9fc;
   border-radius: 8px;
   padding: 0.5rem;
   text-align: center;
@@ -250,38 +242,23 @@ strong, b {
   padding: 3rem 0;
   border-radius: 8px;
   background-size: cover;
+  font-variation-settings: "wght" 600;
 }
-.salutation.morning, .salutation.afternoon, .salutation.evening {
-  background: url(../utilities/bg-landscape.jpg) center center no-repeat;
+.salutation.morning {
+  background: url(../utilities/salutation-bg-morning.png) no-repeat;
+  color: #293042;
 }
-
-.link-btn {
-  display: inline-block;
-  min-width: 6rem;
-  text-decoration: none;
-  padding: 0.7rem;
-  border-radius: 0.375rem;
-  border: 1px solid transparent;
+.salutation.day {
+  background: url(../utilities/salutation-bg-day.png) no-repeat;
+  color: #293042;
 }
-.link-btn:hover {
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  transition: border-color 0.167s linear, box-shadow 0.167s linear;
-}
-
-.link-btn-sm {
-  display: inline-block;
-  text-decoration: none;
-  padding: 0.2rem;
-  border-radius: 0.375rem;
-  border: 1px solid transparent;
-}
-.link-btn-sm:hover {
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  transition: border-color 0.167s linear, box-shadow 0.167s linear;
+.salutation.night {
+  background: url(../utilities/salutation-bg-night.png) no-repeat;
+  color: #f7f9fc;
 }
 
 h2 .breadcrumb li, h2 .breadcrumb li.active {
-  color: black;
+  color: #293042;
 }
 h2 .breadcrumb li a, h2 .breadcrumb li.active a {
   text-decoration: none;
@@ -301,6 +278,16 @@ h2 .breadcrumb li a, h2 .breadcrumb li.active a {
 }
 .table td {
   vertical-align: middle;
+}
+
+body {
+  margin: 0;
+  background-color: #f7f9fc;
+  color: #293042;
+}
+
+html {
+  height: 100%;
 }
 
 .cursor-pointer {

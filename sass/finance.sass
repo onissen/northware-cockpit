@@ -1,16 +1,16 @@
+@import global-var
 @import finance/_variables
 @import bs-theme
-@import global-var
 
 .bg-finance
     background-color: $primary
-    color: white
+    color: $white
 
 body
-    @include bs-btn-primary ($primary: $primary, $color: white)
-    @include bs-btn-outline-primary ($primary: $primary, $color: white)
+    @include bs-btn-primary ($primary: $primary, $color: $white)
+    @include bs-btn-outline-primary ($primary: $primary, $color: $white)
     @include bs-forms ($color: $primary)
-    @include LinkBtn($color: $primary)
+    // @include LinkBtn($color: $primary)
     @include DarkDropdown($color: $primary)
     @include H2Breadcrumb ($color: $primary)
     @include Tables ($color: $primary)
