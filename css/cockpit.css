@@ -648,6 +648,22 @@ strong, b {
   box-shadow: 0 0 0 0.25rem rgba(50, 55, 60, 0.5);
 }
 
+#illustration404 {
+  width: 50%;
+}
+
+#illustration403 {
+  width: 30%;
+}
+
+.error-heading {
+  font-variation-settings: "wght" 600;
+}
+
+.error-description {
+  font-variation-settings: "wght" 300;
+}
+
 .bg-cockpit {
   background-color: #0079D5;
   color: #f7f9fc;

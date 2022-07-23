@@ -6,7 +6,13 @@
         $service_brand = 'Northware Cockpit';
         $service_navtheme = 'navbar-dark';
     }
-
+    
+    
+    if ($service == 'errors') {
+        $service_brand = 'Northware Suite';
+        $service_navtheme = 'navbar-dark';
+    }
+    
     if ($service == 'finance') {
         $service_brand = 'Northware Finance';
         $service_navtheme = 'navbar-dark';
